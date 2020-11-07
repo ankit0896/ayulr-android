@@ -1,0 +1,395 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:background="@drawable/backnew"
+    xmlns:tools="http://schemas.android.com/tools">
+    <include
+        layout="@layout/toolbar_professional"
+        android:id="@+id/toolbar"/>
+
+    <ScrollView
+        android:id="@+id/sclDetail"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:fadeScrollbars="true"
+      android:layout_below="@+id/toolbar">
+
+        <LinearLayout
+            android:id="@+id/lytContent"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="10dp" >
+            <de.hdodenhof.circleimageview.CircleImageView
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/drimage"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/profileimage"
+                android:scaleType="centerCrop"
+                android:layout_gravity="center"
+                app:civ_border_width="2dp"
+                app:civ_border_color="#FF000000"/>
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <EditText
+                    android:id="@+id/drName"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:hint="@string/text_dr_name"
+                    android:ems="10"
+                    android:editable="false"
+                    android:padding="7dp"
+                    android:textSize="14sp">
+                </EditText>
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/drdob"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:ems="10"
+                    android:hint="Date of Birth(DD/MM/YYYY)*"
+                    android:editable="false"
+                    android:padding="7dp"
+                    android:textSize="14sp"></EditText>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:editable="false">
+                <EditText
+                    android:id="@+id/dremail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:hint="Email Id*"
+                    android:textSize="14sp"
+                    android:editable="false"
+                    android:ems="10" >
+                </EditText>
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:editable="false">
+
+                <EditText
+                    android:id="@+id/drcontact"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:ems="10"
+                    android:hint="Mobile Number*"
+                    android:editable="false"
+                    android:maxLength="10"
+                    android:textSize="14sp"/>
+            </com.google.android.material.textfield.TextInputLayout>
+            <RadioGroup
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/radiogroup"
+                android:paddingTop="5dp"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:text="Gender*"/>
+                <RadioButton
+                    android:id="@+id/radio3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Male" />
+                <RadioButton
+                    android:id="@+id/radio4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text="Female" />
+            </RadioGroup>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Professional Detail"
+                android:padding="7dp"
+                android:layout_margin="5dp"
+                android:fontFamily="serif"
+                android:textColor="@color/header"
+                android:textSize="18sp"/>
+<Spinner
+    android:id="@+id/category"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="10dp"/>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <EditText
+                    android:id="@+id/drdegree"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:hint="Select your degree*"
+                    android:editable="false"
+                    android:textSize="14sp"
+                    android:ems="10" >
+                </EditText>
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <EditText
+                    android:id="@+id/drrgnumber"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:hint="Registration Number*"
+                    android:ems="10"
+                    android:padding="7dp"
+                    android:textSize="14sp">
+                </EditText>
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <EditText
+                        android:id="@+id/drspeciality"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:hint="Select your Speciality*"
+                        android:editable="false"
+                        android:textSize="14sp"
+                        android:ems="10" >
+                    </EditText>
+                </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <EditText
+                    android:id="@+id/drotherespeciality"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:ems="10"
+                    android:hint="Other Speciality"
+                    android:inputType="textCapSentences"
+                    android:padding="7dp"
+                    android:textSize="14sp" >
+                </EditText>
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/drspecialtreat"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:ems="10"
+                    android:hint="Specialized in treating (Disease)"
+                    android:inputType="textCapSentences"
+                    android:textSize="14sp"></EditText>
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <EditText
+                    android:id="@+id/drotherediseases"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:hint="Also treat other diseases"
+                    android:textSize="14sp"
+                    android:inputType="textCapSentences"
+                    android:ems="10" >
+                </EditText>
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <EditText
+                    android:id="@+id/drwrkhosptl"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:hint="Worked in Clinic/Hospital/Nursing home"
+                    android:inputType="textCapSentences"
+                    android:textSize="14sp"
+                    android:ems="10" >
+                </EditText>
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <EditText
+                    android:id="@+id/drexperience"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:hint="Clinic/Hospital/Nursing home Experience*"
+                    android:inputType="number"
+                    android:textSize="14sp"
+                    android:ems="10" >
+                </EditText>
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/drspecialfee"
+                        android:layout_width="200dp"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/special_fee"
+                        android:layout_marginBottom="10dp"
+                        android:inputType="number"
+                        android:textSize="14sp"
+                        android:ems="10"/>
+                </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content">
+                    <EditText
+                        android:id="@+id/drspecialvalidfor"
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:hint=" Valid For Days"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:inputType="number"
+                        android:textSize="14sp"
+                        android:ems="10"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/drsplhealthpkg"
+                        android:layout_width="200dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:hint="@string/special_health_package"
+                        android:inputType="textCapSentences"
+                        android:textSize="14sp"
+                        android:ems="10" >
+                    </EditText>
+                </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content">
+                    <EditText
+                        android:id="@+id/drsplhealthpkgrs"
+                        android:layout_width="152dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:hint="Valid For Days"
+                        android:inputType="number"
+                        android:textSize="14sp"
+                        android:ems="10" >
+                    </EditText>
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+
+
+
+                <RadioGroup
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/radiogrp"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:id="@+id/txt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:hint="Home Visit :-"
+                        android:layout_marginRight="10dp"
+                        android:textSize="14sp"/>
+                    <RadioButton
+                        android:id="@+id/radio"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Yes" />
+                    <RadioButton
+                        android:id="@+id/radio1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:text="No" />
+                </RadioGroup>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content">
+                    <EditText
+                        android:id="@+id/drhomevisitfee"
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:hint="@string/home_visit"
+                        android:inputType="number"
+                        android:textSize="14sp"
+                        android:ems="10" >
+                    </EditText>
+                </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content">
+                    <EditText
+                        android:id="@+id/dreveryvisit"
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginLeft="20dp"
+                        android:hint="Valid Fors Days"
+                        android:inputType="number"
+                        android:textSize="14sp"
+                        android:ems="10" >
+                    </EditText>
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btnprofessional"
+                android:layout_width="fill_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/newloginbtn"
+                android:text="Next"
+                android:padding="3dp"
+                android:textColor="#fff"
+                android:textSize="16sp"/>
+
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

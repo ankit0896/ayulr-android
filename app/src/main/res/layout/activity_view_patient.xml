@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/backnew"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <ScrollView
+        android:id="@+id/sclDetail"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:fadeScrollbars="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true">
+        <LinearLayout
+            android:id="@+id/lytContent"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_margin="10dp" >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="2">
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_margin="5dp"
+                    android:padding="7dp"
+                    android:textColorHint="#000"
+                    android:hint="Patient Name"
+                    android:textStyle="bold"
+                    android:textSize="14sp"/>
+                <TextView
+                    android:id="@+id/name"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_margin="5dp"
+                    android:padding="7dp"
+                    android:textSize="14sp"/>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="2">
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_margin="5dp"
+                    android:padding="7dp"
+                    android:hint="Symptoms"
+                    android:textColorHint="#000"
+                    android:textStyle="bold"
+                    android:textSize="14sp"/>
+                <TextView
+                    android:id="@+id/symptoms"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_margin="5dp"
+                    android:padding="7dp"
+                    android:textSize="14sp"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="2">
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_margin="5dp"
+                    android:padding="7dp"
+                    android:hint="Contact Number*"
+                    android:textColorHint="#000"
+                    android:textStyle="bold"
+                    android:inputType="phone"
+                    android:textSize="14sp"/>
+                <TextView
+                    android:id="@+id/contact"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_margin="5dp"
+                    android:padding="7dp"
+                    android:inputType="phone"
+                    android:textSize="14sp"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="2">
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_margin="5dp"
+                    android:padding="7dp"
+                    android:hint="Age"
+                    android:textColorHint="#000"
+                    android:textStyle="bold"
+                    android:textSize="14sp"/>
+
+                <TextView
+                    android:id="@+id/age"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_margin="5dp"
+                    android:padding="7dp"
+                    android:textSize="14sp"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="2">
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_margin="5dp"
+                    android:padding="7dp"
+                    android:hint="Gender"
+                    android:textColorHint="#000"
+                    android:textStyle="bold"
+                    android:textSize="14sp" />
+                <TextView
+                    android:id="@+id/gender"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_margin="5dp"
+                    android:padding="7dp"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+
+            <TextView
+                android:id="@+id/edtptcnslttm"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="17dp"
+                android:text="Schedule"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:gravity="center"
+                android:textColor="@color/header"
+                android:ems="10" >
+            </TextView>
+
+
+
+            <TextView
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:padding="7dp"
+                android:text="Date (click to Re-Schedule)"
+                android:textColor="#000"
+                android:textStyle="bold"
+                android:textSize="14sp"/>
+
+
+
+            <EditText
+                android:id="@+id/date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:editable="false"
+                android:hint="Tap to Select Date"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:layout_margin="8dp"/>
+
+            <TextView
+                android:id="@+id/txteve"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:padding="7dp"
+                android:text="Time (click to Re-Schedule)"
+                android:textColor="#000"
+                android:textStyle="bold"
+                android:textSize="14sp">
+            </TextView>
+
+
+                <EditText
+                    android:id="@+id/time"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:editable="false"
+                    android:hint="Tap to Select Time"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:layout_margin="8dp"/>
+
+
+           <LinearLayout
+               android:layout_width="match_parent"
+               android:layout_height="match_parent"
+               android:orientation="horizontal">
+
+               <Button
+                android:id="@+id/btnconfirm"
+                android:layout_width="150dp"
+                android:layout_height="50dp"
+                android:background="@drawable/newloginbtn"
+                android:text="Confirm Appointment"
+                android:layout_margin="10dp"
+                android:textColor="#fff"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+               <Button
+                   android:id="@+id/btncancel"
+                   android:layout_width="150dp"
+                   android:layout_height="50dp"
+                   android:layout_margin="10dp"
+                   android:background="@drawable/newloginbtn"
+                   android:text="Cancel Appointment"
+                   android:textColor="#fff"
+                   android:textSize="14sp"
+                   android:textStyle="bold" />
+           </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

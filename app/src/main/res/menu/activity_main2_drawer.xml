@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+
+
+        <item
+            android:id="@+id/pacakage"
+            android:icon="@drawable/membership"
+            android:title="Pacakage And Deal" />
+        <item
+            android:id="@+id/term"
+            android:icon="@drawable/ic_format_listermsservices"
+            android:title="Term of Services" />
+        <item
+            android:id="@+id/privacy"
+            android:icon="@drawable/ic_pan_toolprivacypolicy"
+            android:title="Privacy Policy" />
+
+
+        <item
+            android:id="@+id/about"
+            android:icon="@drawable/ic_descriptionaboutus"
+            android:title="About Us" />
+
+        <item
+            android:id="@+id/share"
+            android:icon="@drawable/share"
+            android:title="Share" />
+
+        <item
+            android:id="@+id/logout"
+            android:icon="@drawable/logout"
+            android:title="Log Out" />
+        <item
+            android:id="@+id/exit"
+            android:icon="@drawable/exit1"
+            android:title="Exit" />
+    </group>
+
+
+</menu>

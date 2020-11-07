@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.oxygen.micro.ayulr">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+
+
+    <application
+        android:allowBackup="true"
+        android:hardwareAccelerated="false"
+        android:icon="@drawable/ayulrlogo"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:usesCleartextTraffic="true"
+        android:roundIcon="@drawable/ayulrlogo"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".ActivitySplash"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ActivityViewPager"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Main2Activity"
+            android:label="DASHBOARD"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ActivityLogin"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ActivityUserRegister"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ForumActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".NewPostActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ActivityAppointment"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".PersonalActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ProfessionalActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ClinicActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ViewProfileActivity"
+            android:label="View Profile"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".UpdatePersonalActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".UpdateProfessionalActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".UpdateClinicalActivity"
+            android:screenOrientation="portrait" />
+
+        <meta-data
+            android:name="com.razorpay.ApiKey"
+            android:value="@string/razor_pay_api" />
+
+        <activity
+            android:name=".TabActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".BasicPlan"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".PremiumPlan"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".StandardPlan"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ChoosePlanActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".PasswordActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ViewPatientActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ForgotPasswordActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ChangePasswordActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".CategoryActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ActivityLoginpara"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ParaDashboard"
+            android:label="DASHBOARD"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ParaRegisterActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ParaPersonalActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ParaProfessionalActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ParaClinicActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ParaPlanActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ParaBasicPlanActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ParaStandardPlanActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ParaPremiumPlanActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ParaViewProfileActivity"
+            android:label="View Profile"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ParaUpdatePersonalActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ParaUpdateClinicalActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ParaUpdateProfessionalActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ParaAppointmentActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ParaForumActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ParaChoosePlanActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ParaNewPostActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ParaPasswordActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".NursingActivityLogin"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".NursingRegisterActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".NursingPersonalActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".NursingProfessionalActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".NursingClinicalActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".NursingPlanActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".NursingBasicPlanActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".NursingStandardPlanActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".NursingPremiumPlanActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".NursingDashboard"
+            android:label="DASHBOARD"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".NursingViewProfileActivity"
+            android:label="View Profile"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".NursingChoosePlanActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".NursingPasswordActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".NursingUpdatePersonalActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".NursingUpdateProfessionalActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".NursingUpdateClinicalActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".NursingForumActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".NursingNewPostActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".NursingAppointmentActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".NursingViewPatientActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ParaViewPatientActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".AddVideoActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".PacakageDealActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".DoctorPricingActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ParamedicalPriceingTable"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".NursingPricingTable"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ParaAddVideoActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".NursingAddVideoActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ServiceActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".ViewBloodDonorActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".BloodDonateActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".ViewDetailBloodDonorActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".MedicateEquipmentActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".ViewMedicatedEquipmentActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".ViewDetailMedicatedEquipmentActivity"
+            android:screenOrientation="portrait"/>
+
+        <uses-library android:name="org.apache.http.legacy"
+            android:required="false"></uses-library>
+    </application>
+
+</manifest>

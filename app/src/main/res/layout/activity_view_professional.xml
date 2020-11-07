@@ -1,0 +1,442 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:background="@drawable/backnew"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <ScrollView
+        android:id="@+id/sclDetail"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:fadeScrollbars="true">
+
+        <LinearLayout
+            android:id="@+id/lytContent"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="10dp" >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="2">
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_margin="5dp"
+                    android:padding="7dp"
+                    android:textColorHint="#000"
+                    android:hint="Category*"
+                    android:textStyle="bold"
+                    android:textSize="14sp"/>
+                <TextView
+                    android:id="@+id/drcategory"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_margin="5dp"
+                    android:padding="7dp"
+                    android:textSize="14sp"/>
+            </LinearLayout>
+            <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_margin="5dp"
+                android:padding="7dp"
+                android:hint="Degree*"
+                android:textColorHint="#000"
+                android:textStyle="bold"
+                android:textSize="14sp"/>
+            <TextView
+                android:id="@+id/drdegree"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_margin="5dp"
+                android:padding="7dp"
+                android:textSize="14sp"/>
+              </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_margin="5dp"
+                android:hint="Registration Number*"
+                android:textColorHint="#000"
+                android:textStyle="bold"
+                android:padding="7dp"
+                android:textSize="14sp"/>
+                <TextView
+                    android:id="@+id/drrgnumber"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_margin="5dp"
+                    android:padding="7dp"
+                    android:textSize="14sp"/>
+</LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_margin="5dp"
+                android:padding="7dp"
+                android:hint="Speciality*"
+                android:textColorHint="#000"
+                android:textStyle="bold"
+                android:textSize="14sp">
+            </TextView>
+                <TextView
+                    android:id="@+id/drspeciality"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_margin="5dp"
+                    android:padding="7dp"
+                    android:textSize="14sp">
+                </TextView>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_margin="5dp"
+                android:padding="7dp"
+                android:hint="Other Speciality"
+                android:textColorHint="#000"
+                android:textStyle="bold"
+                android:textSize="14sp"/>
+                <TextView
+                    android:id="@+id/drotherespeciality"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_margin="5dp"
+                    android:padding="7dp"
+                    android:textSize="14sp"/>
+</LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_margin="5dp"
+                android:padding="7dp"
+                android:hint="Specialized in treating (Disease)"
+                android:textColorHint="#000"
+                android:textStyle="bold"
+                android:textSize="14sp"/>
+                <TextView
+                    android:id="@+id/drspecialtreat"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_margin="5dp"
+                    android:padding="7dp"
+                    android:textSize="14sp"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:hint="Also treat other diseases"
+                android:textColorHint="#000"
+                android:padding="7dp"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <TextView
+                    android:id="@+id/drotherediseases"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_margin="5dp"
+                    android:padding="7dp"
+                    android:textSize="14sp"/>
+              </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_margin="5dp"
+                android:padding="7dp"
+                android:textColorHint="#000"
+                android:hint="Worked in Clinic/Hospital/Nursing Home"
+                android:textStyle="bold"
+                android:textSize="14sp"/>
+                <TextView
+                    android:id="@+id/drwrkhosptl"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_margin="5dp"
+                    android:padding="7dp"
+                    android:textSize="14sp"/>
+            </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_margin="5dp"
+                android:padding="7dp"
+                android:textColorHint="#000"
+                android:hint="Clinic/Hospital/Nursing Home Experience*"
+                android:textStyle="bold"
+                android:textSize="14sp" />
+                <TextView
+                    android:id="@+id/drexperience"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_margin="5dp"
+                    android:padding="7dp"
+                    android:textSize="14sp" />
+</LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_margin="5dp"
+                android:textColorHint="#000"
+                android:hint="@string/special_fee"
+                android:textStyle="bold"
+                android:padding="7dp"
+                android:textSize="14sp"/>
+
+                    <TextView
+                        android:id="@+id/drspecialfee"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_margin="5dp"
+                        android:padding="7dp"
+                        android:textSize="14sp"/>
+            </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_margin="5dp"
+                android:padding="7dp"
+                android:hint=" Valid For Days"
+                android:textColorHint="#000"
+                android:textStyle="bold"
+                android:textSize="14sp"/>
+                    <TextView
+                        android:id="@+id/drspecialvalidfor"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_margin="5dp"
+                        android:padding="7dp"
+                        android:textSize="14sp"/>
+            </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_margin="5dp"
+                android:padding="7dp"
+                android:textColorHint="#000"
+                android:hint="special package for (Disease)"
+                android:textStyle="bold"
+                android:textSize="14sp"/>
+                    <TextView
+                        android:id="@+id/drsplhealthpkg"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_margin="5dp"
+                        android:padding="7dp"
+                        android:inputType="textCapWords"
+                        android:textSize="14sp"/>
+            </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_margin="5dp"
+                android:padding="7dp"
+                android:textColorHint="#000"
+                android:hint="Valid For Days"
+                android:textStyle="bold"
+                android:inputType="number"
+                android:textSize="14sp"/>
+                    <TextView
+                        android:id="@+id/drsplhealthpkgrs"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_margin="5dp"
+                        android:padding="7dp"
+                        android:inputType="number"
+                        android:textSize="14sp"/>
+
+
+</LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_margin="5dp"
+                    android:padding="7dp"
+                    android:textColorHint="#000"
+                    android:hint="Home Visit :-"
+                    android:textStyle="bold"
+                    android:textSize="14sp" />
+            <TextView
+                android:id="@+id/homevisit"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_margin="5dp"
+                android:padding="7dp"
+                android:textSize="14sp" />
+
+               </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_margin="5dp"
+                android:padding="7dp"
+                android:textColorHint="#000"
+                android:hint="@string/home_visit"
+                android:textStyle="bold"
+                android:inputType="number"
+                android:textSize="14sp"/>
+                    <TextView
+                        android:id="@+id/drhomevisitfee"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_margin="5dp"
+                        android:padding="7dp"
+                        android:inputType="number"
+                        android:textSize="14sp"/>
+
+              </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_margin="5dp"
+                android:padding="7dp"
+                android:textColorHint="#000"
+                android:hint="Valid For Days"
+                android:textStyle="bold"
+                android:textSize="14sp"/>
+            <TextView
+                        android:id="@+id/dreveryvisit"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_margin="5dp"
+                        android:padding="7dp"
+                        android:textSize="14sp"/>
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btnprofessional"
+                android:layout_width="fill_parent"
+                android:layout_height="40dp"
+                android:background="@drawable/newloginbtn"
+                android:text="Edit Professional"
+                android:padding="3dp"
+                android:textColor="#fff"
+                android:textSize="16sp"/>
+
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context="com.oxygen.micro.ayulr.NewPostActivity">
+<include layout="@layout/toolbar_newpost"
+    android:id="@+id/toolbar"/>
+<ImageView
+    android:layout_below="@+id/toolbar"
+    android:id="@+id/new_post_image"
+    android:layout_width="match_parent"
+    android:layout_height="300dp"
+    android:scaleType="centerCrop"
+    android:src="@drawable/post_placeholder"/>
+
+<EditText
+    android:id="@+id/new_post_desc"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:ems="10"
+    android:hint="Add Description..."
+    android:inputType="textMultiLine"
+    android:maxLength="125"
+    android:padding="16dp"
+    android:layout_below="@+id/new_post_image" />
+
+<Button
+    android:id="@+id/post_btn"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:backgroundTint="@color/header"
+    android:layout_below="@+id/new_post_desc"
+    android:padding="16dp"
+    android:text="Post Blog"
+    android:textAllCaps="false"
+    android:textColor="@android:color/white"
+    android:textSize="18sp"
+    />
+</RelativeLayout>

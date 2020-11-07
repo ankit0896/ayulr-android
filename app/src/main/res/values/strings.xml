@@ -1,0 +1,371 @@
+<resources>
+    <string name="app_name">Ayu-LR Professional</string>
+    <string name="razor_pay_api">rzp_live_dH6JgeK8Lz5uWx</string>
+    <string name="text_hint_phone">Email</string>
+    <string name="text_hint_password">Password</string>
+    <string name="text_btn_login">Login Now</string>
+    <string name="text_btn_register">Register Now</string>
+    <string name="btn_forgot_password_need">Need Password ?</string>
+    <string name="text_btn_request_password">Request Password</string>
+    <string name="text_dr_name">Name of Dr.*</string>
+    <string name="text_specility">I m Specialized Dr for Treating</string>
+    <string name="rg_no">REG No.(Required)</string>
+    <string name="othere_diseases">I m also treat othere diseases</string>
+    <string name="clinic_exp">Clinic Experience</string>
+    <string name="submit_reg">Register</string>
+    <string name="work_hospital">Work in Clinic/Hospital</string>
+    <string name="patient_consult_time">Patient Consultation time:-Mor </string>
+    <string name="patient_visit">Patient may visit me on(double tap to set)</string>
+    <string name="report_submission">Report submission time</string>
+    <string name="available_town">I m also available in towns</string>
+    <string name="general_fee">General Consultation Fee:-Rs </string>
+    <string name="special_fee">Special Consultation Fee:-Rs</string>
+    <string name="special_health_package">Special Package for (Diseases)</string>
+    <string name="which_includes">Which includes</string>
+    <string name="And_package_duration">And package duration is for</string>
+    <string name="home_visit">Home visit fee</string>
+    <string name="every_visit">For every visit fee</string>
+    <string name="my_birthday">My Birthday</string>
+    <string name="my_marraige">My Marraige Anniversary</string>
+    <string name="my_contact">My Contact No.</string>
+    <string name="mob">Mob. No.</string>
+    <string name="whatsapp">Whatsapp No.</string>
+    <string name="email">Email Id</string>
+    <string name="clinic_address">Clinic Address</string>
+    <string name="Residential_address">Residential Address*</string>
+    <string name="dailog_title">Select Number of Days</string>
+    <string name="dailog_title1">Select Number of Days </string>
+    <string name="dailog_title2"> Add Degree </string>
+    <string name="dailog_title3"> Add Speciality </string>
+    <string name="dailog_title4">Package Duration </string>
+    <string name="ok_label">ok</string>
+    <string name="dismiss_label">Dismiss</string>
+    <string name="clearall_label">clearall</string>
+    <string name="Chooseplan">Choose Plan</string>
+    <string name="show_pwd">Show password</string>
+    <string name="hide_pwd">Hide password</string>
+    <string-array name="desig_array">
+        <item>DR.</item>
+        <item>MR.</item>
+        <item>MRS.</item>
+        <item>MS.</item>
+    </string-array>
+    <string-array name="package_array">
+        <item>0-3month</item>
+        <item>0-6month</item>
+        <item>0-9month</item>
+        <item>1year</item>
+    </string-array>
+    <string-array name="days_array">
+        <item>Mon</item>
+        <item>Tue</item>
+        <item>Wed</item>
+        <item>Thu</item>
+        <item>Fri</item>
+        <item>Sat</item>
+        <item>Sun</item>
+    </string-array>
+    <string name="title_activity_main2">Home</string>
+    <string-array name="degree_array">
+        <item>A.M.E.</item>
+        <item>B.D.S.</item>
+        <item>B.E.M.S.</item>
+        <item>B.pharma</item>
+        <item>B.A.M.S.</item>
+        <item>B.H.M.S.</item>
+        <item>B.U.M.S.</item>
+        <item>B.M.T.</item>
+        <item>B.O.T.</item>
+        <item>B.P.T.</item>
+        <item>B.M.L.T.</item>
+        <item>B.OPTOM</item>
+        <item>B.S.M.S.</item>
+        <item>C.T.S.</item>
+        <item>D.M.L.T.</item>
+        <item>D.H.M.S.</item>
+        <item>D.H.B.</item>
+        <item>D.M.</item>
+        <item>D.G.O.</item>
+        <item>D.T.D.C.</item>
+        <item>D.Orth</item>
+        <item>D.M.X.T./C.M.X.T.</item>
+        <item>D.H.N.E.</item>
+        <item>D.A.C.I.</item>
+        <item>D.D.</item>
+        <item>D.C.P.</item>
+        <item>D.C.H.</item>
+        <item>D.C.M.</item>
+        <item>D.L.O.</item>
+        <item>D.B.M.S.</item>
+        <item>D.N.B.</item>
+        <item>D.V.D</item>
+        <item>D.C.Psy.</item>
+        <item>D.H.Psy.</item>
+        <item>D.H.C.</item>
+        <item>D.Mw</item>
+        <item>D.P.H.</item>
+        <item>D.M.P.</item>
+        <item>D.P.M.R.</item>
+        <item>D.R.M.</item>
+        <item>D.pharma</item>
+        <item>E.N.T.</item>
+        <item>M.B.B.S.</item>
+        <item>M.Ch</item>
+        <item>M.D.S.</item>
+        <item>M.S.</item>
+        <item>M.D.(General Physician)</item>
+        <item>M.D.(Ayurvedic)</item>
+        <item>M.D.(Pulmonary)</item>
+        <item>M.P.T.</item>
+        <item>P.G.D.C.D</item>
+    </string-array>
+    <string-array name="speciality_array">
+        <item>Cardiologist</item>
+        <item>Dermatologist</item>
+        <item>Neurologist</item>
+        <item>Neurosurgeon</item>
+        <item>Pathologistt</item>
+        <item>Pediatrician</item>
+        <item>Gastroenterologist</item>
+        <item>Hematologist/Oncologist</item>
+        <item>Nephrologist </item>
+        <item>MD PANCHAKARMA</item>
+        <item>General surgery</item>
+        <item>KAYACHIKITSA</item>
+        <item>Obstetrician</item>
+        <item>Gynecologist</item>
+        <item>General Practitioner</item>
+        <item>Nurse-Midwifery</item>
+        <item>Ophthalmologist</item>
+        <item>Oral and Maxillofacial Surgeon</item>
+        <item>Orthopaedic Surgeon</item>
+        <item>Otolaryngologist (Head and Neck Surgeon)</item>
+        <item>Plastic Surgeon</item>
+        <item>Psychiatrist </item>
+        <item>Pulmonary Medicine Physician</item>
+        <item>Diagnostic Radiologist</item>
+        <item>Rheumatologist</item>
+        <item>Urologist</item>
+        <item>Allergist or Immunologist</item>
+        <item>Anesthesiologist</item>
+        <item>Endocrinology</item>
+        <item>General practice</item>
+        <item>Orthodontics</item>
+        <item>Public Health</item>
+        <item>General surgery</item>
+        <item>Dietitian</item>
+        <item>othere</item>
+    </string-array>
+    <string-array name="para_degree_array">
+        <item>Au.D</item>
+        <item>A.N.M.</item>
+        <item>D.C.</item>
+        <item>O.D.</item>
+        <item>D.M.W</item>
+        <item>D.S.N</item>
+        <item>DScPT.</item>
+        <item>B.N.</item>
+        <item>B.S.N.</item>
+        <item>B.A.S.L.P.</item>
+        <item>Bsc.RTT</item>
+        <item>B.P.T.</item>
+        <item>M.P.T.</item>
+        <item>G.N.M.</item>
+        <item>other</item>
+    </string-array>
+    <string-array name="nav_drawer_items">
+        <item>Home</item>
+        <item>Cart</item>
+        <item>Profile</item>
+        <item>Share</item>
+        <item>Contact</item>
+        <item>Logout</item>
+        <item>Exit</item>
+    </string-array>
+    <string name="action_settings">Settings</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="Create_profile">Create Profile</string>
+    <string name="Appointment">Appointment</string>
+    <string name="About">About</string>
+    <string name="Feedback">Feedback</string>
+    <string name="Video">Video</string>
+    <string name="Service">Services</string>
+    <string name="Testimonial">Testimonial</string>
+    <string name="view_profile">View Profile</string>
+    <string name="desc_list_item_icon">Item Icon</string>
+    <string name="title_activity_swap">ActivitySwap</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+    <string name="app_version">Version 1.2.0</string>
+    <string name="copyright">Copyright &#169; 2017 oxygenweb Developer \n All rights reserved</string>
+    <string name="email_address">developer.info@oxygenweb.in</string>
+    <string name="loading">loading...</string>
+    <string name="title_activity_demo">DemoActivity</string>
+
+    <string name="about">
+        <![CDATA[
+<h2>About Ayu LR</h2>
+<p> Ayu-LR ( The Life rejuvenator) as the name itself is self explanatory ,the word “Ayu ” derived from Sanskrit and Hindi means “Age ” and “LR” refers as ” Life Rejuvenator ” So, after huge research and surveys, we came with a solution of ayu-lr mobile application. As people already know about the ways & means to rejuvenate their lives and be healthy but still there is a huge gap which people are seeking for and in lack of it suffering physically and financially.
+Human being is a magnificent art of nature and there is no alterative available in this entire Universe, which can replace it and It is a hard-core fact that, we do not know the value of ourselves, unless we fall sick or suffer from any disease and with a tones of money you cannot buy or create the same human being.
+We give more value and attention to the gadgets, automobiles, vehicles. electronics, furniture’s, etc. which have a lot of alternate available and can be replaced but we pay more attention and care for it by getting regular service , repair and Insurance to keep it for long lasting service, but same way we can’t care for our self Because of it knowingly or unknowingly we don’t care about ourselves to be fit, healthy and fine and as a result we fall sick or ill. Everyone wants to be healthy, wealthy and don’t want to be fallen sick but obviously while becoming wealthy we always compromise with health. We Possess and select our entire needful livelihood as per our Choice of taste, shape, size, odor, color, design, because we have multiple options and choices.
+We are living in independent nation and as per constitution, we have a right to take all decisions related to our life and we always use it for all the issues and matter which influence ,affects ,our life whether it is matter of grooming, education, food etc. , and we don’t let anybody to interfere or buy and obey anyone’s advice, choice or suggestions But it has been observed that when it comes to the matter of health, our self or family members, friends or relatives fall sick, we always take suggestions, opinion , advice from others to help us and advice any Doctors or Health Practitioners, (by subsiding our constitutional right ) as if that person is an expert or did some research work or got some award of it and we religiously obey and follow wit his advice and suggestion without asking any question. It might be possible that the health practitioner /doctor which the above person suggested as per his vision and judgment belonged to other city or in other state.
+</p>
+]]>
+</string>
+
+
+    <string name="termsandservices"><![CDATA[
+
+		<h2>Life Rejuvenators (Heath Care Practictioners ) Agreement Form</h2>
+<p>Dear, Life rejuvenators (healthcare professionals ) kindly go through the users agreements carefully before availing the services of ayulr website and mobile applications , and if you are not agree with this agreement of usage kindly do not access and avail the services of ayulr website and mobile application.</p>
+
+    <p><strong>1.</strong>I agree to download and use the free trial pack of 30 days offered by company ayulr for my fist time enrollment only and if i satisfied with the usage of ayulr mobile application and website I will renew my package offered by the company.
+    </p>
+    <p><strong>2.</strong> For renewal of my profile i will never request or ask for company or any of companies person for free trial pack, as this free trial pack is only for new enrolments only.
+    </p>
+    <p><strong>3.</strong> I agree that soon before my free trail pack expires I will avial the package of my choice which is offered by ayulr, so that any patient may not suffer because of my online unavailability.
+    </p>
+	<p><strong>4.</strong> I have to attend the patient who booked his appointment by using ayulr mobile application, and take the consultation fee mentioned in my profile of ayulr mobile application and www.ayulr.com web page
+</p>
+    <p><strong>5.</strong>I soon intimate to upgrade regarding my unavailability in hospital/clinic/centre with mentioning the date /day and time and also when i will be available so that your patient may not suffer
+</p>
+    <p><strong>6.</strong> I also intimate to ayulr company regarding if any camp is organised by me or in my clinic,centre,or hospital so that patient may get benefited
+</p>
+    <p><strong>7.</strong> I agree that all the information mentioned in my profile which is filled and updated by myself is true and best of my knowledge and if it is find any incorrect and false information ayulr company have all rights to reject and delete my profile and immediately company will send the record to nearby police HQ.
+</p>
+    <p><strong>8.</strong>I agree that the consultation fee, health package, which I mentioned in my profile is very much in my knowledge.
+    </p>
+    <p><strong>9.</strong> I agree that I will pay my subscription package fee through RTGS, demand draft ,cheque, credit card on line baking ,debit card or through mobile wallet of ayulr and not pay in cash to promote cash less India.
+    </p>
+    <p><strong>10.</strong>I agree that whatever the health article and health relate video uploaded by me will fist verified by company and then it will be uploaded in website and on mobile application as for this feature company ayulr is not charging any money it is very much in my package which I availed including my free trial package also
+    </p>
+    <p><strong>11.</strong>	I agree that in case of home visit to a patient, I will carry all related equipments which patient informed regarding his illness.
+</p>
+<p><strong>12.</strong>I agree that to promote SWACHH BHARAT I may try to keep my centre, clinic, hospital hygienic free and medical/medicated waste free, to save our nation and environment too.
+</p>
+<p><strong>13.</strong>I do agree that i will not break any rules of agreement
+<p/>
+<p><strong>14.</strong>I agree that i will continue the duration of package which I availed and not violate the agreement.
+</P>
+<p><strong>15.</strong>I agree that company ayulr have all the rights to change its usage policy or upgrade it without any notice in advance.
+</p>
+
+    <h3>Agreement For Users/Patient</h3>
+
+    <p><strong>1.</strong>I do agree that i downloaded the ayulr mobile app to rejuvinate life.
+</p>
+    <p><strong>2.</strong>I agree that I will give all my personal educational and professional details thus i will not blame or claim for ayulr mobile application and ayulr web page for any selection of health professionals, clinic, center, hospital, or donor and all information related to health.
+</p>
+   <p><strong>3.</strong>	I agree that i will not misbehave or use any slang language in audio, video or written formate to any of the health professionals which you yourself had opted for treatment and also not to any staff or employee of ayulr, since it is an offensible crime.
+</p>
+<p><strong>4.</strong>I agree that ayulr have all the rights to block my services of use if I find guilty mentioned in point 2 and 3.
+</p>
+    <p><strong>5.</strong>	I will not blame to ayulr for unavailability of health professionals which i booked for treatment.
+</p>
+   <p><strong>6.</strong>I agree that company is not charging any money for its uses from services from me.
+</p>
+    <p><strong>7.</strong>I will not donate/sale or give on rent any unhygienic medical equipment or contaminated equipment so that the needy person may not suffer or just for the sack of your home remain garbage free.
+</p>
+   <p><strong>8.</strong>It is mandatory for the persons interested to donate their blood or medical equipment kindly mentions your residential address along with your mobile no. Because in case of emergency if your ph, is not responded the needy may visit to your residence and you may help him.
+</p>
+<p><strong>9.</strong>I agree that through this site or mobile application i will do not harass any one who are register user or any new user baring of there gender,community,race and town as it is  an offensible crime and company ayulr have all the rights to send all my details to judicial officer near by my home town if I do so.
+</p>
+ ]]>
+</string>
+
+    <string name="privacy">
+        <![CDATA[
+<h2>Ayulr respects all users and committed to reserve consumer privacy!</h2>
+<p> This world wide website (www.ayulr.com) and mobile application ayulr, and all related application and services (“Properties”) are owned and operated by “COMPANY” Ayu Life Rejuvenator Pvt. Ltd. (“AyuLR”) . The company incorporated in Feb.2018 and its registered office is at:
+199, Madhuban Colony, Dewas, Madhya Pradesh, India -455001
+The terms ‘You’ or ‘Your’ refers to you as the user (Irrespective of Registered or Non –Registered user or any Life Rejuvenator (LR) and the terms ‘ayulr’, ‘We’, ‘Us’, ‘Company’, and ‘Our’ refer to ayulr and/or Ayu Life Rejuvenator Pvt. Ltd and all related applications and websites.
+
+<h2>AyuLR’s privacy policy is for:</h2>
+i)	The Users (Registered /Non-Registered) who access and use the services of ayulr website
+ii)	The Health Care Professionals (“Life Rejuvenators “) i.e., (“LR”) (whether an individual professional or an organization) or similar institution bearing of all Paths (“AYUSH”, “PHYSIOTHEAPIEST”, “PARAMEDICALS”).
+iii)	The patient himself or his/her attendants or affiliates, or dependents or any family friend or friend searching for Health Care Professionals to Rejuvenate the Life of patient through ayulr website or mobile application,
+
+While access to and usage of the website or mobile application by clicking on “I Agree”/ “I Accept” button of the page , accessing or using the website or mobile application ,you accepted the terms of usage and agreed upon the privacy policy and you are legally bound by the terms and condition of this privacy policy and constitute a legal agreement between  Ayulr and you in connection with the use and access to the website.
+READ THIS PRIVACY POLICY VERY CAREFULLY, IF YOU DO NOT AGREE WITH ANY OF THE POINTS MENTIONED IN THIS PRIVACY POLICY, KINDLY DO NOT ACCESS OR USE THE SEVICES OF WEBSITE AND MOBILE APPLICATION.
+IF YOU ARE USING AYULR ON BEHALF OF YOUR DEPENDENTS,GUARDIANS,FAMILY FRUEND,FRIEND,COMPANIES EMPLOYEES, PATIENT ATTENDANT YOU ARE USING AS THIRD PARTY YOU REPESENT THAT YOU ARE AUTHORITIES TO ACCEPT THE PRIVACY POLICIES OF AYULR ON BEHALF OF MENTIONED ABOVE.
+This policy gives information about the information collected from the Users, including sensitive personal data or information; the purpose of collection and modes of usage of such information; and how Ayulr will use such information.
+We are committed to protect the privacy and personnel and professional data of the Users, The use and access of services on the website is subject to the acceptance of this privacy policy.
+USERS:
+The website is for all users (Registered , Non-Registered /visitors).Health Care Professionals who are Life Rejuvenators Practicing in any of the therapy/Pathy ( Allopath ,AYUSH, Par a-medicals, Patients Donors)
+Registered Users:
+•	The individuals who have registered themselves (Life Rejuvenators ,donors or Patients) by providing Their data by filling the registration form of the website an Agree that you are providing data voluntarily With the Terms and Condition details (a) Contact Data includes (Name, Contact No. and, email id). (b)Demographic Data includes (Residential Address, Permanent Address). (c). Personal Data Includes (Gender, Medical History) and can log on the page of website by proving the User Name and Passwords. (d) Historic data regarding your usage of the Properties and history of the appointments made;
+Certain features which are available for Registered Users only: (i) Registered User can Book An Appointment with Life Rejuvenators and get the confirmation of his booking done message on his contact no. Provided by user on website or mobile application, (ii) Register Users can write their feedback reviews regarding the service which he availed with the help of Ayulr website / application. (iii) For any query can send their mail to privacy@ayulr.com (IV) Registered users will be updated by any new or additional feature launched on website of ayulr and application. (V) Registered Users can donate Blood and Medical Equipments and so many features and facilities can be availed by Registered Users.
+Non- Registered Users: Non- Registered users are users/visitors of website who are not Registered by filling and submitting the registration form on the website of Ayulr, but can access information on the website
+
+<h2>Usage of the information of User</h2>
+By using the information, you agree to the terms and conditions of this privacy policy and the manner of collection, use and sharing of your personal data as described here. You agree that you are providing data voluntarily. Ayulr may require specific consent to be provided through email on your email id which you mention in the registration form.
+Personal information that we collect, process and use in connection with the website include not only the information that we collect via various forms on the Properties, but also the information that you voluntarily provide us over the website in various contexts. Information collected by us from you may include (but is not limited to) the following:
+•	Name;
+•	Login ID and password;
+•	Contact information (such as your email address, addresses, phone numbers);
+•	Demographic data (such as your gender, your date of birth and your pin code)
+•	IP address, operating system, browser type, browser version, browser configuration, name of internet service provider, and other types of computer and connection related information relevant to identifying your type of device, connecting to the website, enabling data exchange with you and your device, and ensuring a convenient use of the website;
+•	Historic data regarding your usage of the Properties and history of the appointments made;
+•	Information collected by cookies or similar technologies;
+•	Newsletter subscriptions, enrolment for promotions, use of special offers, etc.
+•	Survey and answers of query, reviews, ratings and other types of feedback provided;
+•	Medical credentials, visiting hours of a Life Rejuvenators (Health Care Professionals), fees, locations (in relation to Life Rejuvenators);
+•	Medical information;
+•	Financial and payment related data for payment of subscription amount and charges;
+•	Geo-location information when permitted by you on your device; and
+•	Any other information that you enter on, or upload is voluntarily.
+
+<h2>Ayulr reserves the right to use information provided by you for the following:</h2>
+•	Publishing on the website and application;
+•	Informing you for offering new products/services of Ayulr;
+•	Contacting your for feedback and reviews of the website;
+•	Analysis and Industry reporting
+By accepting the terms and condition you hereby giving consent to Ayulr to use of such information submitted by you on website.
+You are responsible for maintaining the accuracy of the information submitted by you to Ayulr, such as your contact information provided as part of account registration.  If you provide any information that is False, Inaccurate, and Out of date or Incomplete, or Ayulr suspects that the information provided by you is false, inaccurate, out of date or incomplete, Ayulr may, at its sole discretion to discontinue your usage of the website.
+If you facing any issue to access the website of Ayulr, please intimate us on privacy@ayulr.com
+Ayulr does not exercise control over the sponsored content or links on the website. And hence, it is not liable for any type of information shared on any website that are linked to the commercial use
+Ayulr enable’s User to communicate with other Users, who want to donate blood or donate medical equipment (with prior consent) or to post information to be accessed by others, whereupon other Users may collect such data. Such User’s, are not authorized Ayulr representatives or agents, and their opinions or statements do not necessarily reflect those of Ayulr, and they are not authorized to bind Ayulr to any contract. Ayulr hereby expressly disclaims any liability for any reliance or misuse of such information.
+Ayulr will only disclose your personal information in the event it is required to do so by law, rule, regulation, law enforcement agency, governmental official, legal authority or similar requirements.
+
+<h2>Ayulr may disclose personal information to the following:</h2>
+•	Ayulr partners: We may share your personal information with our business partners if there is a legitimate reason to do so.
+•	Third party service providers: We may employ third party service providers (i.e., companies or individuals engaged by us) to perform certain functions on our behalf and under our instructions.
+•	Courts, law enforcement authorities and regulators: We may share personal data when we believe it necessary to comply with the law, to protect the rights or safety of our website, other users, or third parties (e.g., for fraud protection purposes). Without limitation, this may include cases in which we are required to share personal data by the law or binding order of courts, law enforcement authorities or regulators. We will carefully determine the permissibility of providing personal data in each such context, paying particular attention to the type of request, types of data affected and any impact that a disclosure of personal data would have on the user affected. Should we decide to disclose personal data in such context we will also consider ways of reducing the scope of the disclosure, for instance by redacting the information provided.
+Recipients of your personal data may be located in any country. This may include countries where applicable data protection laws provide a lesser degree of protection than your home country.
+
+<h2>Security of Personal Information</h2>
+Ayulr respects your privacy and makes the best efforts, including certain managerial, technical, operational and physical security control measures, in securing your personal information. Your personal Information is maintained by AyuLR’s website in electronic form on its equipment, and on the equipment of its employees. If required, any such information may be converted to physical form. Ayulr takes all necessary precautions to protect your personal information.
+It is imperative for you to protect against unauthorized access to your password, your computer, and your mobile phone. Be sure to log off from the Properties when you are not using it. Ayulr is not responsible for unauthorized access to the website, on your behalf.
+Ayulr helps Health Care Professionals/ Life Rejuvenators (LR’s) to maintain and organise such information. Ayulr may, therefore, retain and submit all such records to any Life Rejuvenators, who request access to such information.
+Ayulr is not responsible for the confidentiality, security or distribution of your personal information by our partners and third parties outside the scope of our agreement with such partners and third parties. Further, Ayulr shall not be responsible for any breach of security or for any actions of any third parties or events that are beyond the reasonable control of Ayulr.
+
+<h2>Changes in Privacy Policy</h2>
+Ayulr may make changes in this Privacy Policy at any time, with or without advance notice. If there are any significant changes in this Privacy Policy, Ayulr will inform you of such revised privacy policy. If you may have any objections to changes, and hence, no longer wish to use the website, you can write an email to privacy@ayulr.com
+After Ayulr notifies you, the use and access of services on the website is subject to the acceptance of this privacy policy.
+
+
+
+
+<h2>Queries and Grievances about Privacy Policy</h2>
+Please contact us at privacy@ayulr.com should you have questions about this privacy policy.
+Ayulr have established internal mechanisms to verify our ongoing adherence to this privacy policy. Any grievances in relation to the processing or use of the personal information can be sent to the Managing Director as identified above. We shall try to resolve all grievances and disputes in a speedy manner. If you have any grievance with respect to our use of your information.
+
+<h2>Feedback on Privacy Policy</h2>
+Your feedback is always welcome. If you have any questions or concerns about our privacy practices or your online privacy please do not hesitate to contact us.
+</p>
+]]>
+</string>
+    <string name="title_activity_view_profile">ViewProfileActivity</string>
+    <string name="title_activity_tab">ChoosePlan</string>
+    <string name="tab_text_1">Tab 1</string>
+    <string name="tab_text_2">Tab 2</string>
+    <string name="tab_text_3">Tab 3</string>
+    <string name="title_activity_nuring_pricing_table">NuringPricingTable</string>
+    <string name="link">
+    <![CDATA[
+    http://ayulr.com/Doctor/login_signup
+
+]]>
+    </string>
+    <string name="userName">UserName</string>
+</resources>

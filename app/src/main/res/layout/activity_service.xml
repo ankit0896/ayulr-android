@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <include
+        layout="@layout/toolbar_basic"
+        android:id="@+id/toolbar"/>
+    <RelativeLayout
+        android:layout_below="@+id/toolbar"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:layout_marginBottom="?actionBarSize">
+        <RelativeLayout
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:padding="25dp">
+            <LinearLayout
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_marginBottom="5dp"
+                android:id="@+id/L1"
+                android:weightSum="2"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_height="wrap_content"
+                    android:layout_width="0dp"
+                    android:padding="10dp"
+                    android:textColor="#000"
+                    android:text="Blood Donor"
+                    android:layout_weight="1.5"
+                    android:layout_marginTop="5dp"/>
+
+                <View
+                    android:background="@color/header"
+                    android:layout_height="match_parent"
+                    android:layout_width="0.5dp"
+                    android:padding="10dp"
+                    android:layout_marginTop="5dp"/>
+
+                <LinearLayout
+                    android:layout_height="match_parent"
+                    android:layout_width="0dp"
+                    android:layout_weight="0.5"
+                    android:gravity="center">
+
+                    <TextView
+                        android:background="@drawable/right"
+                        android:layout_height="30dp"
+                        android:layout_width="30dp"/>
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <View
+                android:background="@color/header"
+                android:layout_height="0.5dp"
+                android:layout_width="match_parent"
+                android:id="@+id/view1"
+                android:layout_below="@+id/L1"
+                android:layout_marginTop="5dp"/>
+
+
+
+
+
+            <LinearLayout
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_marginBottom="5dp"
+                android:id="@+id/L2"
+                android:layout_below="@+id/view1"
+                android:weightSum="2"
+                android:orientation="horizontal"
+                android:layout_marginTop="10dp">
+
+                <TextView
+                    android:layout_height="wrap_content"
+                    android:layout_width="0dp"
+                    android:padding="10dp"
+                    android:textColor="#000"
+                    android:text="Medicated Equipment Donor"
+                    android:layout_weight="1.5"
+                    android:layout_marginTop="5dp"/>
+
+                <View
+                    android:background="@color/header"
+                    android:layout_height="match_parent"
+                    android:layout_width="0.5dp"
+                    android:padding="10dp"
+                    android:layout_marginTop="5dp"/>
+
+                <LinearLayout
+                    android:layout_height="match_parent"
+                    android:layout_width="0dp"
+                    android:layout_weight="0.5"
+                    android:gravity="center">
+
+                    <TextView
+                        android:background="@drawable/right"
+                        android:layout_height="30dp"
+                        android:layout_width="30dp"/>
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <View
+                android:background="@color/header"
+                android:layout_height="0.5dp"
+                android:layout_width="match_parent"
+                android:id="@+id/view3"
+                android:padding="10dp"
+                android:layout_below="@+id/L2"
+                android:layout_marginTop="5dp"/>
+
+
+            <LinearLayout
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_marginBottom="5dp"
+                android:id="@+id/L3"
+                android:layout_below="@+id/view3"
+                android:weightSum="2"
+                android:orientation="horizontal"
+                android:layout_marginTop="10dp">
+
+                <TextView
+                    android:layout_height="wrap_content"
+                    android:layout_width="0dp"
+                    android:padding="10dp"
+                    android:textColor="#000"
+                    android:text="Audiometrist"
+                    android:layout_weight="1.5"
+                    android:layout_marginTop="5dp"/>
+
+                <View
+                    android:background="@color/header"
+                    android:layout_height="match_parent"
+                    android:layout_width="0.5dp"
+                    android:padding="10dp"
+                    android:layout_marginTop="5dp"/>
+                <LinearLayout
+                    android:layout_height="match_parent"
+                    android:layout_width="0dp"
+                    android:layout_weight="0.5"
+                    android:gravity="center">
+
+                    <TextView
+                        android:background="@drawable/right"
+                        android:layout_height="30dp"
+                        android:layout_width="30dp"/>
+
+                </LinearLayout>
+
+
+
+            </LinearLayout>
+
+            <View
+                android:background="@color/header"
+                android:layout_height="0.5dp"
+                android:layout_width="match_parent"
+                android:id="@+id/view4"
+                android:padding="10dp"
+                android:layout_below="@+id/L3"
+                android:layout_marginTop="5dp"/>
+
+            <LinearLayout
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_marginBottom="5dp"
+                android:id="@+id/L4"
+                android:layout_below="@+id/view4"
+                android:weightSum="2"
+                android:orientation="horizontal"
+                android:layout_marginTop="10dp">
+
+                <TextView
+                    android:layout_height="wrap_content"
+                    android:layout_width="0dp"
+                    android:padding="10dp"
+                    android:textColor="#000"
+                    android:text="Optometrist"
+                    android:layout_weight="1.5"
+                    android:layout_marginTop="5dp"/>
+
+                <View
+                    android:background="@color/header"
+                    android:layout_height="match_parent"
+                    android:layout_width="0.5dp"
+                    android:padding="10dp"
+                    android:layout_marginTop="5dp"/>
+
+                <LinearLayout
+                    android:layout_height="match_parent"
+                    android:layout_width="0dp"
+                    android:layout_weight="0.5"
+                    android:gravity="center">
+
+                    <TextView
+                        android:background="@drawable/right"
+                        android:layout_height="30dp"
+                        android:layout_width="30dp"/>
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+            <View
+                android:background="@color/header"
+                android:layout_height="0.5dp"
+                android:layout_width="match_parent"
+                android:id="@+id/view5"
+                android:padding="10dp"
+                android:layout_below="@+id/L4"
+                android:layout_marginTop="5dp"/>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>

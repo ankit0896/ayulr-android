@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+    <include layout="@layout/toolbar_video"
+        android:id="@+id/toolbar"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="20sp"
+        android:layout_marginLeft="20sp"
+        android:layout_centerInParent="true"
+        android:orientation="vertical">
+        <de.hdodenhof.circleimageview.CircleImageView
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/imageView"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/profileimage"
+            android:layout_gravity="center"
+            app:civ_border_width="1dp"
+            app:civ_border_color="#000000"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/phone"
+            android:id="@+id/name">
+
+            <EditText
+                android:id="@+id/edtname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Full Name"
+                android:textSize="14sp"
+                android:inputType="textCapSentences"
+                android:lines="1"
+                android:maxLines="1"
+                android:singleLine="true"></EditText>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/phone"
+            android:id="@+id/desig">
+
+            <EditText
+                android:id="@+id/edtdesig"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Designation"
+                android:inputType="textCapSentences"
+                android:textSize="14sp"
+                android:lines="1"
+                android:maxLines="1"
+                android:singleLine="true"></EditText>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/name"
+            android:id="@+id/email"
+            >
+
+            <EditText
+                android:id="@+id/edtlink"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Video link here...(paste youtube url link)"
+                android:textSize="14sp"
+                android:lines="1"
+                android:maxLines="1"
+                android:singleLine="true"></EditText>
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </LinearLayout>
+    <Button
+        android:id="@+id/btnadd"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/header"
+        android:text="Add Video"
+        android:textColor="#fff"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+</RelativeLayout>

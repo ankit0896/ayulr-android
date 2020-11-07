@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:gravity="center"
+                android:layout_marginBottom="?actionBarSize"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/navimgDialogTv"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="left"
+                    android:padding="10dp"/>
+
+            </LinearLayout>
+        </ScrollView>
+
+
+    </RelativeLayout>
+    <TextView
+        android:id="@+id/dismisstv"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/loginbtnback"
+        android:gravity="center"
+        android:text="Ok"
+        android:textColor="#fff"
+        android:textSize="20sp" />
+</LinearLayout>
