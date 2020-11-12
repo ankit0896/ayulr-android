@@ -27,12 +27,13 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.chaos.view.PinView;
 import com.google.android.material.textfield.TextInputEditText;
-import com.oxygen.micro.ayulr.Config;
-import com.oxygen.micro.ayulr.Main2Activity;
-import com.oxygen.micro.ayulr.NetworkDetactor;
-import com.oxygen.micro.ayulr.ProfessionalActivity;
 import com.oxygen.micro.ayulr.R;
-import com.oxygen.micro.ayulr.SharedPrefManager;
+import com.oxygen.micro.ayulr.connection.NetworkDetactor;
+import com.oxygen.micro.ayulr.constant.Config;
+import com.oxygen.micro.ayulr.constant.SharedPrefManager;
+import com.oxygen.micro.ayulr.view.activity.Main2Activity;
+import com.oxygen.micro.ayulr.view.activity.ProfessionalActivity;
+
 
 import org.json.JSONException;
 import org.json.JSONObject;

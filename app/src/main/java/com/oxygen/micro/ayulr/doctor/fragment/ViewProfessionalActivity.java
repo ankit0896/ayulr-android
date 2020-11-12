@@ -16,14 +16,13 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import com.oxygen.micro.ayulr.Config;
-import com.oxygen.micro.ayulr.HttpParse;
-import com.oxygen.micro.ayulr.NetworkDetactor;
 import com.oxygen.micro.ayulr.R;
-import com.oxygen.micro.ayulr.SharedPrefManager;
-import com.oxygen.micro.ayulr.UpdateProfessionalActivity;
-import com.oxygen.micro.ayulr.User;
+import com.oxygen.micro.ayulr.connection.HttpParse;
+import com.oxygen.micro.ayulr.connection.NetworkDetactor;
+import com.oxygen.micro.ayulr.constant.Config;
+import com.oxygen.micro.ayulr.constant.SharedPrefManager;
+import com.oxygen.micro.ayulr.model.User;
+import com.oxygen.micro.ayulr.view.activity.UpdateProfessionalActivity;
 
 import org.json.JSONArray;
 import org.json.JSONException;

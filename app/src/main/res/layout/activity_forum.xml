@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
     android:orientation="vertical"
-    tools:context="com.oxygen.micro.ayulr.ForumActivity">
+    tools:context="com.oxygen.micro.ayulr.view.activity.ForumActivity">
     <include
         layout="@layout/toolbar_blog"
         android:id="@+id/toolbar"/>

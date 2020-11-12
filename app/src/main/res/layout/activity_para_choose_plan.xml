@@ -1,132 +1,157 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
-    <include layout="@layout/toolbar_plan"
-        android:id="@+id/toolbar"/>
+    android:layout_height="match_parent">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar_plan" />
+
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:scaleType="fitXY"
         android:alpha="0.1"
-        android:src="@drawable/background"/>
+        android:scaleType="fitXY"
+        android:src="@drawable/background" />
+
     <LinearLayout
         android:id="@+id/login_layout"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:padding="10dp"
         android:layout_centerInParent="true"
-        android:orientation="vertical" >
+        android:orientation="vertical"
+        android:padding="10dp">
 
-        <RelativeLayout
-            android:layout_width="fill_parent"
-            android:layout_height="130dp"
-            android:id="@+id/standardplan"
-            android:background="@color/header"
-            android:layout_margin="10dp">
-            <TextView
-                android:id="@+id/planVi"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Standard Plan"
-                android:textSize="20dp"
-                android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
-                android:textStyle="bold"
-                android:textColor="#fff"
-                android:layout_margin="20dp"
-                android:layout_centerHorizontal="true"/>
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_centerHorizontal="true">
-                <TextView
-                    android:id="@+id/V"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="750"
-                    android:textSize="20dp"
-                    android:layout_marginRight="5dp"
-                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
-                    android:textStyle="bold"
-                    android:textColor="#fff"
-                    android:layout_marginTop="60dp"/>
-                <ImageView
-                    android:layout_width="15dp"
-                    android:layout_height="15dp"
-                    android:layout_marginTop="67dp"
-                    android:src="@drawable/money_icon"/>
-                <TextView
-                    android:id="@+id/Vfg"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_toRightOf="@+id/View"
-                    android:text="90 Days"
-                    android:textSize="20dp"
-                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
-                    android:textStyle="bold"
-                    android:layout_marginLeft="5dp"
-                    android:textColor="#fff"
-                    android:layout_marginTop="60dp"/>
-            </LinearLayout>
-
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:id="@+id/premiumplan"
-            android:layout_width="fill_parent"
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
             android:layout_height="130dp"
             android:layout_margin="10dp"
-            android:background="@color/header">
-            <TextView
-                android:id="@+id/planVie"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Premium Plan"
-                android:textSize="20dp"
-                android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
-                android:textStyle="bold"
-                android:textColor="#fff"
-                android:layout_margin="20dp"
-                android:layout_centerHorizontal="true"/>
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:orientation="horizontal">
-                <TextView
-                    android:id="@+id/Vie"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="1350"
-                    android:textSize="20dp"
-                    android:layout_marginRight="5dp"
-                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
-                    android:textStyle="bold"
-                    android:textColor="#fff"
-                    android:layout_marginTop="60dp"/>
-                <ImageView
-                    android:layout_width="15dp"
-                    android:layout_height="15dp"
-                    android:layout_marginTop="67dp"
-                    android:src="@drawable/money_icon"/>
-                <TextView
-                    android:id="@+id/Vi"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_toRightOf="@+id/View"
-                    android:text="180 Days"
-                    android:textSize="20dp"
-                    android:layout_marginLeft="5dp"
-                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
-                    android:textStyle="bold"
-                    android:textColor="#fff"
-                    android:layout_marginTop="60dp"
-                    />
-            </LinearLayout>
+            app:cardCornerRadius="8dp">
 
-        </RelativeLayout>
+            <RelativeLayout
+                android:id="@+id/standardplan"
+                android:layout_width="match_parent"
+                android:layout_height="130dp"
+                android:background="@color/header">
+
+                <TextView
+                    android:id="@+id/planVi"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="20dp"
+                    android:text="Standard Plan"
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+                    android:textColor="#fff"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/V"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="60dp"
+                        android:layout_marginRight="5dp"
+                        android:text="750"
+                        android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+                        android:textColor="#fff"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:layout_marginTop="67dp"
+                        android:src="@drawable/money_icon" />
+
+                    <TextView
+                        android:id="@+id/Vfg"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="60dp"
+                        android:layout_toRightOf="@+id/View"
+                        android:text="90 Days"
+                        android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+                        android:textColor="#fff"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="130dp"
+            android:layout_margin="10dp"
+            app:cardCornerRadius="8dp">
+
+            <RelativeLayout
+                android:id="@+id/premiumplan"
+                android:layout_width="fill_parent"
+                android:layout_height="130dp"
+                android:background="@color/header">
+
+                <TextView
+                    android:id="@+id/planVie"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="20dp"
+                    android:text="Premium Plan"
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+                    android:textColor="#fff"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/Vie"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="60dp"
+                        android:layout_marginRight="5dp"
+                        android:text="1350"
+                        android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+                        android:textColor="#fff"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:layout_marginTop="67dp"
+                        android:src="@drawable/money_icon" />
+
+                    <TextView
+                        android:id="@+id/Vi"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="60dp"
+                        android:layout_toRightOf="@+id/View"
+                        android:text="180 Days"
+                        android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+                        android:textColor="#fff"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
     </LinearLayout>
 
 </RelativeLayout>

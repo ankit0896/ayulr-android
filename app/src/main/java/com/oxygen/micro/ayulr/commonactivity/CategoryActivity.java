@@ -7,11 +7,10 @@ import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
-
-import com.oxygen.micro.ayulr.ActivityLoginpara;
-import com.oxygen.micro.ayulr.NursingActivityLogin;
 import com.oxygen.micro.ayulr.R;
 import com.oxygen.micro.ayulr.doctor.activity.ActivityLogin;
+import com.oxygen.micro.ayulr.view.activity.ActivityLoginpara;
+import com.oxygen.micro.ayulr.view.nursing.activity.NursingActivityLogin;
 
 import androidx.appcompat.app.AppCompatActivity;
 

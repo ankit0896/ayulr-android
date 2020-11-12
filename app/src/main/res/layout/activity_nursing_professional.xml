@@ -28,6 +28,7 @@
 
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_height="wrap_content">
                 <EditText
                     android:id="@+id/drdegree"
@@ -42,6 +43,7 @@
             </com.google.android.material.textfield.TextInputLayout>
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_height="wrap_content">
                 <EditText
                     android:id="@+id/drexperience"
@@ -51,12 +53,13 @@
                     android:hint="Experience*"
                     android:inputType="number"
                     android:ems="10"
-                    android:padding="7dp"
+
                     android:textSize="14sp">
                 </EditText>
             </com.google.android.material.textfield.TextInputLayout>
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_height="wrap_content">
                 <EditText
                     android:id="@+id/drworkin"
@@ -71,6 +74,7 @@
             </com.google.android.material.textfield.TextInputLayout>
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_height="wrap_content">
 
                 <EditText
@@ -85,6 +89,7 @@
             </com.google.android.material.textfield.TextInputLayout>
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_height="wrap_content">
 
                 <EditText
@@ -99,6 +104,7 @@
             </com.google.android.material.textfield.TextInputLayout>
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_height="wrap_content">
                 <EditText
                     android:id="@+id/dralsotreat"
@@ -108,7 +114,6 @@
                     android:ems="10"
                     android:hint="Also Treat"
                     android:inputType="textCapSentences"
-                    android:padding="7dp"
                     android:textSize="14sp" >
                 </EditText>
             </com.google.android.material.textfield.TextInputLayout>
@@ -147,6 +152,7 @@
                 android:layout_height="wrap_content" >
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="150dp"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:layout_height="wrap_content">
                     <EditText
                         android:id="@+id/drhomevisitfee"
@@ -161,6 +167,7 @@
                 </com.google.android.material.textfield.TextInputLayout>
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="150dp"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:layout_height="wrap_content">
                     <EditText
                         android:id="@+id/drvalidfor"

@@ -18,14 +18,15 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.textfield.TextInputEditText;
-import com.oxygen.micro.ayulr.ForgotPasswordActivity;
-import com.oxygen.micro.ayulr.Main2Activity;
-import com.oxygen.micro.ayulr.NetworkDetactor;
 import com.oxygen.micro.ayulr.R;
-import com.oxygen.micro.ayulr.RequestHandler;
-import com.oxygen.micro.ayulr.SharedPrefManager;
-import com.oxygen.micro.ayulr.URLs;
-import com.oxygen.micro.ayulr.User;
+import com.oxygen.micro.ayulr.connection.NetworkDetactor;
+import com.oxygen.micro.ayulr.connection.RequestHandler;
+import com.oxygen.micro.ayulr.constant.SharedPrefManager;
+import com.oxygen.micro.ayulr.constant.URLs;
+import com.oxygen.micro.ayulr.model.User;
+import com.oxygen.micro.ayulr.view.activity.ForgotPasswordActivity;
+import com.oxygen.micro.ayulr.view.activity.Main2Activity;
+
 
 import androidx.appcompat.app.AppCompatActivity;
 import butterknife.BindView;

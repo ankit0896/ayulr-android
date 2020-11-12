@@ -10,8 +10,8 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 
-import com.oxygen.micro.ayulr.ActivityViewPager;
 import com.oxygen.micro.ayulr.R;
+import com.oxygen.micro.ayulr.view.activity.ActivityViewPager;
 
 public class ActivitySplash extends Activity {
 	ImageView bounceImage;

@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@drawable/backnew2">
 
     <LinearLayout
@@ -11,22 +10,24 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:padding="20dp"
-        android:orientation="vertical" >
-                <ImageView
-                    android:id="@+id/imageView1"
-                    android:layout_width="150dp"
-                    android:layout_height="100dp"
-                    android:layout_gravity="center"
-                    android:src="@drawable/ayulrlogo"/>
+        android:orientation="vertical"
+        android:padding="20dp">
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/name"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:prefixText="@string/prefix"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
-                <com.google.android.material.textfield.TextInputEditText
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="150dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center"
+            android:src="@drawable/ayulrlogo" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/name"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:prefixText="@string/prefix">
+
+            <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/editname"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -34,79 +35,85 @@
                 android:inputType="textCapSentences"
                 android:lines="1"
                 android:maxLines="1"
-                android:textSize="16sp"
-                android:singleLine="true" />
+                android:singleLine="true"
+                android:textSize="16sp" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/email"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+            android:layout_height="wrap_content">
+
             <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/editemail"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="Email"
-                        android:inputType="textEmailAddress"
-                        android:lines="1"
-                        android:maxLines="1"
-                        android:textSize="16sp"
-                        android:singleLine="true" />
+                android:id="@+id/editemail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Email"
+                android:inputType="textEmailAddress"
+                android:lines="1"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:textSize="16sp" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/password"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:passwordToggleEnabled="true"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+            app:passwordToggleEnabled="true">
+
             <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/editpass"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="Password"
-                        android:inputType="textPassword"
-                        android:lines="1"
-                        android:maxLines="1"
-                        android:textSize="16sp"
-                        android:singleLine="true" />
-                    </com.google.android.material.textfield.TextInputLayout>
+                android:id="@+id/editpass"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Password"
+                android:inputType="textPassword"
+                android:lines="1"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:textSize="16sp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/mobile"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+            android:layout_height="wrap_content">
+
             <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/editmob"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="@string/mob"
-                        android:inputType="phone"
-                        android:lines="1"
-                        android:textSize="16sp"
-                        android:maxLines="1" />
-                    </com.google.android.material.textfield.TextInputLayout>
+                android:id="@+id/editmob"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/mob"
+                android:inputType="phone"
+                android:lines="1"
+                android:maxLength="10"
+                android:maxLines="1"
+                android:textSize="16sp" />
+        </com.google.android.material.textfield.TextInputLayout>
 
         <Button
             android:id="@+id/buttonRegister"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:layout_marginTop="15dp"
-            android:text="Verify Now"
+            android:background="@drawable/newloginbtn"
             android:padding="3dp"
+            android:text="Verify Now"
             android:textColor="#fff"
-            android:textSize="16sp"
-            android:background="@drawable/newloginbtn" />
+            android:textSize="16sp" />
 
     </LinearLayout>
+
     <ProgressBar
         android:id="@+id/progressBar"
         style="?android:attr/progressBarStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
         android:layout_below="@+id/login_layout"
-        android:visibility="gone"/>
+        android:layout_centerInParent="true"
+        android:visibility="gone" />
 
 </RelativeLayout>

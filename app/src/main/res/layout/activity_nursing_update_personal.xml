@@ -5,7 +5,7 @@
     android:layout_height="fill_parent"
     android:orientation="vertical"
     android:background="@drawable/backnew"
-    tools:context="com.oxygen.micro.ayulr.ActivityRegistration"
+    tools:context="com.oxygen.micro.ayulr.view.nursing.activity.NursingUpdatePersonalActivity"
     xmlns:tools="http://schemas.android.com/tools">
     <include
         layout="@layout/toolbar_personal"
@@ -38,6 +38,7 @@
                 app:civ_border_width="2dp" />
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_height="wrap_content">
                 <EditText
                     android:id="@+id/drName"
@@ -47,12 +48,12 @@
                     android:hint="Name"
                     android:ems="10"
                     android:editable="false"
-                    android:padding="7dp"
                     android:textSize="14sp">
                 </EditText>
             </com.google.android.material.textfield.TextInputLayout>
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_height="wrap_content">
 
                 <EditText
@@ -63,12 +64,12 @@
                     android:ems="10"
                     android:hint="Date of Birth(DD/MM/YYYY)"
                     android:editable="false"
-                    android:padding="7dp"
                     android:textSize="14sp"></EditText>
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_height="wrap_content"
                 android:editable="false">
                 <EditText
@@ -84,6 +85,7 @@
             </com.google.android.material.textfield.TextInputLayout>
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_height="wrap_content">
 
                 <EditText
@@ -101,6 +103,7 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/radiogroup"
                 android:paddingTop="5dp"
+                android:layout_marginStart="10dp"
                 android:orientation="horizontal">
                 <TextView
                     android:layout_width="wrap_content"
@@ -121,6 +124,7 @@
             </RadioGroup>
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_height="wrap_content">
 
                 <EditText
@@ -136,6 +140,7 @@
 
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_height="wrap_content">
                 <EditText
                     android:id="@+id/drresidential"

@@ -19,13 +19,13 @@ import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import com.oxygen.micro.ayulr.HttpParse;
-import com.oxygen.micro.ayulr.NetworkDetactor;
 import com.oxygen.micro.ayulr.R;
-import com.oxygen.micro.ayulr.SharedPrefManager;
-import com.oxygen.micro.ayulr.UpdatePersonalActivity;
-import com.oxygen.micro.ayulr.User;
+import com.oxygen.micro.ayulr.connection.HttpParse;
+import com.oxygen.micro.ayulr.connection.NetworkDetactor;
+import com.oxygen.micro.ayulr.constant.Config;
+import com.oxygen.micro.ayulr.constant.SharedPrefManager;
+import com.oxygen.micro.ayulr.model.User;
+import com.oxygen.micro.ayulr.view.activity.UpdatePersonalActivity;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -78,11 +78,11 @@ public class ViewPersonalActivity extends Fragment implements View.OnClickListen
     @BindView(R.id.drimage)
     ImageView drimageView;
     RadioButton rdmale,rdfemale;
-    String DrNameHolder,DobHolder,EmailHolder,ContactHolder,AnniversaryHolder,MemberHolder,
-            CollegeHolder,MedalyearHolder,MedalforHolder,AwardasHolder,AwardforHolder,ResidenceHolder,StateHolder,CityHolder,
-            LandmarkHolder,PincodeHolder,GenderHolder;
+    String DrNameHolder="",DobHolder="",EmailHolder="",ContactHolder="",AnniversaryHolder="",MemberHolder="",
+            CollegeHolder="",MedalyearHolder="",MedalforHolder="",AwardasHolder="",AwardforHolder="",ResidenceHolder="",StateHolder="",CityHolder="",
+            LandmarkHolder="",PincodeHolder="",GenderHolder="";
     String ImageHolder,IdHolder;
-    String HttpURL1 = "http://ameygraphics.com/ayulr/api/filter_view.php";
+    String HttpURL1 = Config.BASEURL+"filter_view.php";
     String ParseResult;
     HashMap<String, String> ResultHash = new HashMap<>();
     String s;
