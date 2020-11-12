@@ -14,6 +14,8 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.oxygen.micro.ayulr.commonactivity.CategoryActivity;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 /**
@@ -95,7 +97,7 @@ private int getItem(int i){
 }
     private void launchHomeScreen() {
         prefManager.setFirstTimeLaunch(false);
-        Intent i = new Intent(ActivityViewPager.this,CategoryActivity.class);
+        Intent i = new Intent(ActivityViewPager.this, CategoryActivity.class);
         startActivity(i);
         finish();
     }

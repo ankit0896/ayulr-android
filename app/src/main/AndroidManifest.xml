@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.oxygen.micro.ayulr">
-
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-
-
 
     <application
         android:allowBackup="true"
@@ -19,7 +16,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".ActivitySplash"
+            android:name=".commonactivity.ActivitySplash"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -35,10 +32,10 @@
             android:label="DASHBOARD"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ActivityLogin"
+            android:name=".doctor.activity.ActivityLogin"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ActivityUserRegister"
+            android:name=".doctor.activity.ActivityUserRegister"
             android:screenOrientation="portrait" />
         <activity
             android:name=".ForumActivity"
@@ -104,7 +101,7 @@
             android:name=".ChangePasswordActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".CategoryActivity"
+            android:name=".commonactivity.CategoryActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".ActivityLoginpara"

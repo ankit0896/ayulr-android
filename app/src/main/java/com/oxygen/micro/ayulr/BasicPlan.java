@@ -10,6 +10,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.oxygen.micro.ayulr.doctor.activity.ActivityLogin;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
@@ -66,7 +68,7 @@ public class BasicPlan extends AppCompatActivity {
                 pDialog.dismiss();
                 if (httpResponseMsg.equals("success")) {
                     Toast.makeText(BasicPlan.this, "You are registered Successfully\nPlease login to access your account", Toast.LENGTH_LONG).show();
-                    Intent intent= new Intent(BasicPlan.this,ActivityLogin.class);
+                    Intent intent= new Intent(BasicPlan.this, ActivityLogin.class);
                     intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                     startActivity(intent);
                     finish();

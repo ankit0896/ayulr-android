@@ -51,7 +51,7 @@ public class ForgotPasswordActivity extends AppCompatActivity {
                 if (NetworkDetactor.isNetworkAvailable(ForgotPasswordActivity.this)) {
                 if (CheckEditText) {
                     register();
-                    confirmOtp();
+                  //  confirmOtp();
                 }
                 } else {
                     Toast.makeText(ForgotPasswordActivity.this, "No Internet Available", Toast.LENGTH_SHORT).show();
@@ -60,7 +60,7 @@ public class ForgotPasswordActivity extends AppCompatActivity {
         });
     }
 
-    private void confirmOtp()  {
+   /* private void confirmOtp()  {
         //Creating a LayoutInflater object for the dialog box
         LayoutInflater li = LayoutInflater.from(this);
         //Creating a view to get the dialog box
@@ -140,7 +140,7 @@ public class ForgotPasswordActivity extends AppCompatActivity {
                 requestQueue.add(stringRequest);
             }
         });
-    }
+    }*/
     public void CheckEditTextIsEmptyOrNot(){
         mobile = txtmob.getText().toString().trim();
 

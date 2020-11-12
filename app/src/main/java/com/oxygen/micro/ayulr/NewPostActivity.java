@@ -175,4 +175,9 @@ if (httpResponseMsg.equals("success")) {
         return true;
     }
 
+    @Override
+    public void onBackPressed() {
+        finish();
+        super.onBackPressed();
+    }
 }

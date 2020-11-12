@@ -19,7 +19,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
 import androidx.appcompat.widget.Toolbar;
 
-import com.android.volley.RequestQueue;
+import com.oxygen.micro.ayulr.doctor.activity.ActivityLogin;
 import com.razorpay.Checkout;
 import com.razorpay.PaymentResultListener;
 
@@ -38,7 +38,7 @@ public class PremiumPlan extends AppCompatActivity implements PaymentResultListe
     HttpParse httpParse = new HttpParse();
     String PaymentHolder;
     RadioButton rdcash,rdonline;
-    private AppCompatButton buttonConfirm;
+    private Button buttonConfirm;
     Button button;
     String EmailHolder;
 
@@ -78,7 +78,7 @@ public class PremiumPlan extends AppCompatActivity implements PaymentResultListe
         //Initizliaing confirm button fo dialog box and edittext of dialog box
         rdcash=(RadioButton)confirmDialog.findViewById(R.id.radio);
         rdonline=(RadioButton)confirmDialog.findViewById(R.id.radio1);
-        buttonConfirm = (AppCompatButton) confirmDialog.findViewById(R.id.buttonConfirm);
+        buttonConfirm = (Button) confirmDialog.findViewById(R.id.buttonConfirm);
 
 
         //Creating an alertdialog builder
@@ -164,7 +164,7 @@ public class PremiumPlan extends AppCompatActivity implements PaymentResultListe
                 pDialog.dismiss();
                 if (httpResponseMsg.equals("success")) {
                     Toast.makeText(PremiumPlan.this, "You are registered Successfully\nPlease login to access your account", Toast.LENGTH_LONG).show();
-                    Intent intent= new Intent(PremiumPlan.this,ActivityLogin.class);
+                    Intent intent= new Intent(PremiumPlan.this, ActivityLogin.class);
                     intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                     startActivity(intent);
                     finish();

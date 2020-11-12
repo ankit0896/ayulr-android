@@ -28,5 +28,5 @@ public class Config {
     public static final String NURREGISTER_URL = BASEURL+"nursing/register.php";
     public static final String NURCONFIRM_URL = BASEURL+"nursing/confirm.php";
     public static final String BLOODDONOR_URL = BASEURL+"donor/insert_blood_donor.php";
-    public static final String EQUIPMENTDONOR_URL = BASEURL+"donor/insert_equi.php";
+    public static final String EQUIPMENTDONOR_URL = BASEURL+"insert_equi.php";
 }

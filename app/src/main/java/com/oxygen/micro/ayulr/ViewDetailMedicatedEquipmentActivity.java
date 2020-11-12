@@ -12,6 +12,8 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import butterknife.BindView;
+import butterknife.ButterKnife;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -20,9 +22,26 @@ import org.json.JSONObject;
 import java.util.HashMap;
 
 public class ViewDetailMedicatedEquipmentActivity extends AppCompatActivity {
-    TextView t1, t2, t3, t4, t5, t6, t7, t8,t9;
+    @BindView(R.id.etname)
+    TextView t1;
+    @BindView(R.id.etemail)
+    TextView t2;
+    @BindView(R.id.etcontact)
+    TextView t3;
+    @BindView(R.id.etage)
+    TextView t4;
+    @BindView(R.id.etgender)
+    TextView t5;
+    @BindView(R.id.ettype)
+    TextView t6;
+    @BindView(R.id.etgroupe)
+    TextView t7;
+    @BindView(R.id.etaddress)
+    TextView t8;
+    @BindView(R.id.etdes)
+    TextView t9;
     ProgressDialog pDialog;
-    String HttpURL1 = Config.BASEURL+"donor/view_equi.php";
+    String HttpURL1 = Config.BASEURL+"view_equi.php";
     String ParseResult;
     HashMap<String, String> ResultHash = new HashMap<>();
     String s;
@@ -32,18 +51,14 @@ public class ViewDetailMedicatedEquipmentActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_detail_medicated_equipment);
+        initview();
+
+    }
+    private void initview(){
+        ButterKnife.bind(this);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        t1 = (TextView) findViewById(R.id.etname);
-        t2 = (TextView) findViewById(R.id.etemail);
-        t3 = (TextView) findViewById(R.id.etcontact);
-        t4 = (TextView) findViewById(R.id.etage);
-        t5 = (TextView) findViewById(R.id.etgender);
-        t6 = (TextView) findViewById(R.id.ettype);
-        t7 = (TextView) findViewById(R.id.etgroupe);
-        t8 = (TextView) findViewById(R.id.etaddress);
-        t9 = (TextView) findViewById(R.id.etdes);
         Intent iGet = getIntent();
         D_id = (iGet.getStringExtra("b_id"));
         if (NetworkDetactor.isNetworkAvailable(ViewDetailMedicatedEquipmentActivity.this)) {
@@ -131,8 +146,6 @@ public class ViewDetailMedicatedEquipmentActivity extends AppCompatActivity {
                             DescriptionHolder = jobj.getString("price");
                             EquipmentDescriptionHolder = jobj.getString("e_desc");
                             AddressHolder = jobj.getString("address");
-
-
                         }
                     } catch (JSONException e) {
                         //  Toast.makeText(context, "" + e, Toast.LENGTH_SHORT).show();

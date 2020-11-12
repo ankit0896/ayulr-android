@@ -21,9 +21,13 @@ import android.widget.ImageView;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
+import com.google.android.material.textfield.TextInputEditText;
+
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import butterknife.BindView;
+import butterknife.ButterKnife;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -34,17 +38,43 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.HashMap;
-
 public class UpdateClinicalActivity extends AppCompatActivity {
     String HttpURL1 = Config.BASEURL+"filter_view.php";
     String ParseResult;
     HashMap<String, String> ResultHash = new HashMap<>();
     String s;
-    EditText ethospital,etfee,etfeevalid,etvisitday,etothervisitday,etcontact,
-            etstate,etcity,etlandmark,etpincode,etaddress;
+    @BindView(R.id.drimage)
+    ImageView drimageView;
+    @BindView(R.id.drimage2)
+    ImageView imageView2;
+    @BindView(R.id.drimage3)
+    ImageView imageView3;
+    @BindView(R.id.drhospital)
+    TextInputEditText ethospital;
+    @BindView(R.id.drfee)
+    TextInputEditText etfee;
+    @BindView(R.id.drfeevalidday)
+    TextInputEditText etfeevalid;
+    @BindView(R.id.drvisitday)
+    EditText etvisitday;
+    @BindView(R.id.drothervisitday)
+    EditText etothervisitday;
+    @BindView(R.id.drcontactno)
+    TextInputEditText etcontact;
+    @BindView(R.id.drstate)
+    TextInputEditText etstate;
+    @BindView(R.id.drcity)
+    TextInputEditText etcity;
+    @BindView(R.id.drlandmark)
+    TextInputEditText etlandmark;
+    @BindView(R.id.drpincode)
+    TextInputEditText etpincode;
+    @BindView(R.id.draddress)
+    TextInputEditText etaddress;
+    @BindView(R.id.btnsub)
+    Button buttonclinic;
     static EditText etmrngtime, etmrngtimeto,etaftertime,etafterto, etevngtime,etevngto,
             etothermrngtime,etothermrngto,etotheraftertime,etotherafterto,etotherevngtime,etotherevngto;
-    Button buttonclinic;
     String IdHolder,HospitalHolder,FeeHolder,FeeValidHolder,VisitHolder,MrngHolder,MrngToHolder,AfterHolder,AfterToHolder,EvngHolder,EvngToHolder,
             OtherVisitHoder,OtherMrngHolder,OtherMrngToHoder,OtherAfterHolder,OtherAfterToHolder,OtherEvngHolder,OtherEvngToHolder,
             ContactHolder,StateHolder,CityHolder,LandmarkHolder,PincodeHolder,AddressHolder,ImageHolder,ImageHolder2,ImageHolder3;
@@ -53,7 +83,7 @@ public class UpdateClinicalActivity extends AppCompatActivity {
     String finalResult;
     HashMap<String, String> hashMap = new HashMap<>();
     HttpParse httpParse = new HttpParse();
-    String HttpURL = "http://tbwebnet.com/ayulr.com/ayulr_api/update_clinical.php";
+    String HttpURL = Config.BASEURL+"update_clinical.php";
     ArrayList<Integer> muserday = new ArrayList<>();
     String[] listitem;
     boolean[] checkeditem;
@@ -102,41 +132,27 @@ public class UpdateClinicalActivity extends AppCompatActivity {
     private Bitmap bitmap;
     private Bitmap bitmap2;
     private Bitmap bitmap3;
-    ImageView drimageView,imageView2,imageView3;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_update_clinical);
+        ButterKnife.bind(this);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        drimageView = (ImageView) findViewById(R.id.drimage);
-        imageView2 = (ImageView)findViewById(R.id.drimage2);
-        imageView3 = (ImageView)findViewById(R.id.drimage3);
-        ethospital = (EditText) findViewById(R.id.drhospital);
-        etfee = (EditText) findViewById(R.id.drfee);
-        etfeevalid= (EditText) findViewById(R.id.drfeevalidday);
-        etvisitday = (EditText) findViewById(R.id.drvisitday);
         etmrngtime= (EditText) findViewById(R.id.drmrngtime);
         etmrngtimeto = (EditText) findViewById(R.id.drmrngto);
         etaftertime = (EditText) findViewById(R.id.draftertime);
         etafterto = (EditText) findViewById(R.id.drafterto);
         etevngtime= (EditText) findViewById(R.id.drevngtime);
         etevngto= (EditText) findViewById(R.id.drevngto);
-        etothervisitday= (EditText) findViewById(R.id.drothervisitday);
         etothermrngtime = (EditText) findViewById(R.id.drothermrngtime);
         etothermrngto = (EditText) findViewById(R.id.drothermrngto);
         etotheraftertime = (EditText) findViewById(R.id.drotheraftertime);
         etotherafterto = (EditText) findViewById(R.id.drotherafterto);
         etotherevngtime= (EditText) findViewById(R.id.drotherevngtime);
         etotherevngto = (EditText) findViewById(R.id.drotherevngto);
-        etcontact = (EditText) findViewById(R.id.drcontactno);
-        etstate = (EditText) findViewById(R.id.drstate);
-        etcity = (EditText) findViewById(R.id.drcity);
-        etlandmark = (EditText) findViewById(R.id.drlandmark);
-        etpincode = (EditText) findViewById(R.id.drpincode);
-        etaddress = (EditText) findViewById(R.id.draddress);
-        buttonclinic = (Button) findViewById(R.id.btnsub);
         listitem = getResources().getStringArray(R.array.days_array);
         checkeditem = new boolean[listitem.length];
         listitem1 = getResources().getStringArray(R.array.days_array);
@@ -354,7 +370,6 @@ public class UpdateClinicalActivity extends AppCompatActivity {
                 new TimePickerDialog(UpdateClinicalActivity.this, mTimeSetListener5, aftertoHour, aftertoMinute, false).show();
             }
         });
-
 
         buttonclinic.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -1031,7 +1046,7 @@ public class UpdateClinicalActivity extends AppCompatActivity {
                 progressDialog.dismiss();
                 if (httpResponseMsg.equals("success")) {
                     Toast.makeText(UpdateClinicalActivity.this, httpResponseMsg.toString(), Toast.LENGTH_LONG).show();
-                    Intent intent = new Intent(UpdateClinicalActivity.this,Main2Activity.class);
+                    Intent intent = new Intent(UpdateClinicalActivity.this, Main2Activity.class);
                     startActivity(intent);
                     finish();
                 }else {
@@ -1177,20 +1192,20 @@ public class UpdateClinicalActivity extends AppCompatActivity {
                             ImageHolder3 = jobj.getString("clinic_img3");
                             if (!ImageHolder.equals("clinic_img")) {
                                 // byte[] b = Base64.decode(ImageHolder, Base64.DEFAULT);
-                                InputStream is = new java.net.URL("http://ayulr.com/clinic_img/"+ImageHolder).openStream();
+                                InputStream is = new java.net.URL("http://ameygraphics.com/ayulr/clinic_img/"+ImageHolder).openStream();
 
                                 bitmap = BitmapFactory.decodeStream(is);
 
                             }
                             if (!ImageHolder2.equals("clinic_img2")) {
                                 // byte[] b = Base64.decode(ImageHolder, Base64.DEFAULT);
-                                InputStream is = new java.net.URL("http://ayulr.com/clinic_img/"+ImageHolder2).openStream();
+                                InputStream is = new java.net.URL("http://ameygraphics.com/ayulr/clinic_img/"+ImageHolder2).openStream();
                                 bitmap2 = BitmapFactory.decodeStream(is);
 
                             }
                             if (!ImageHolder3.equals("clinic_img3")) {
                                 // byte[] b = Base64.decode(ImageHolder, Base64.DEFAULT);
-                                InputStream is = new java.net.URL("http://ayulr.com/clinic_img/"+ImageHolder3).openStream();
+                                InputStream is = new java.net.URL("http://ameygraphics.com/ayulr/clinic_img/"+ImageHolder3).openStream();
                                 bitmap3 = BitmapFactory.decodeStream(is);
 
                             }

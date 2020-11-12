@@ -20,15 +20,16 @@
             android:src="@drawable/ayulrlogo" />
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/layoutemail"
+            android:id="@+id/email"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
-            <EditText
+            <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/editemail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/userName"
+                android:hint="@string/email"
                 android:inputType="textEmailAddress"
                 android:lines="1"
                 android:maxLines="1"
@@ -37,11 +38,12 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/layoutmob"
+            android:id="@+id/pass"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
-            <EditText
+            <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/editMob"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

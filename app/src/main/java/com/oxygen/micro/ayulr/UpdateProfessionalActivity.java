@@ -12,14 +12,17 @@ import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
+import com.google.android.material.textfield.TextInputEditText;
+
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import butterknife.BindView;
+import butterknife.ButterKnife;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -27,16 +30,49 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class UpdateProfessionalActivity extends AppCompatActivity {
+public class UpdateProfessionalActivity extends AppCompatActivity implements View.OnClickListener {
     String HttpURL1 = Config.BASEURL+"filter_view.php";
     String ParseResult;
     HashMap<String, String> ResultHash = new HashMap<>();
     String s;
-    EditText etcategory,etdegree,etrgnumber,etspeciality,etotherespeciality,etdisease,etotherediseases,etworkhospital,
-            etexperience,etspecialfee,etspecialvalidfor,etspecialhealthpkg,etspecialhealthday,ethomevisitfee,eteveryvisit;
+    @BindView(R.id.drcategory)
+    TextInputEditText etcategory;
+    @BindView(R.id.drdegree)
+    TextInputEditText etdegree;
+    @BindView(R.id.drrgnumber)
+    TextInputEditText etrgnumber;
+    @BindView(R.id.drspeciality)
+    TextInputEditText etspeciality;
+    @BindView(R.id.drotherespeciality)
+    TextInputEditText etotherespeciality;
+    @BindView(R.id.drspecialtreat)
+    TextInputEditText etdisease;
+    @BindView(R.id.drotherediseases)
+    TextInputEditText etotherediseases;
+    @BindView(R.id.drwrkhosptl)
+    TextInputEditText etworkhospital;
+    @BindView(R.id.drexperience)
+    TextInputEditText etexperience;
+    @BindView(R.id.drspecialfee)
+    TextInputEditText etspecialfee;
+    @BindView(R.id.drspecialvalidfor)
+    TextInputEditText etspecialvalidfor;
+    @BindView(R.id.drsplhealthpkg)
+    TextInputEditText etspecialhealthpkg;
+    @BindView(R.id.drsplhealthpkgrs)
+    TextInputEditText etspecialhealthday;
+    @BindView(R.id.drhomevisitfee)
+    TextInputEditText ethomevisitfee;
+    @BindView(R.id.dreveryvisit)
+    TextInputEditText eteveryvisit;
+    @BindView(R.id.btnprofessional)
     Button buttonprofessional;
+    @BindView(R.id.radiogrp)
     RadioGroup rdgroupe;
-    RadioButton rdyes,rdno;
+    @BindView(R.id.radio)
+    RadioButton rdyes;
+    @BindView(R.id.radio1)
+    RadioButton rdno;
     String IdHolder,CategoryHolder, DegreeHolder,RgnumberHolder,SpecialityHolder,OthereSpecialityHolder,DiseaseHolder,OthereDiseasesHolder,
             WorkHospitalHolder,ExperienceHolder,SpecialfeeHolder,SpecialValidforHolder,SpecialhealthpkgHolder,SpecialhealthpkgdayHolder,
             EveryvisitHolder,HomevisitHolder,HomevisitfeeHolder;
@@ -58,30 +94,16 @@ public class UpdateProfessionalActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_update_professional);
+        initview();
+    }
+    private void initview(){
+        ButterKnife.bind(this);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        etcategory = (EditText) findViewById(R.id.drcategory);
-        etdegree = (EditText) findViewById(R.id.drdegree);
-        etrgnumber = (EditText) findViewById(R.id.drrgnumber);
-        etspeciality= (EditText) findViewById(R.id.drspeciality);
-        etotherespeciality = (EditText) findViewById(R.id.drotherespeciality);
-        etdisease= (EditText) findViewById(R.id.drspecialtreat);
-        etotherediseases = (EditText) findViewById(R.id.drotherediseases);
-        etworkhospital = (EditText) findViewById(R.id.drwrkhosptl);
-        etexperience = (EditText) findViewById(R.id.drexperience);
-        etspecialfee= (EditText) findViewById(R.id.drspecialfee);
-        etspecialvalidfor = (EditText) findViewById(R.id.drspecialvalidfor);
-        etspecialhealthpkg= (EditText) findViewById(R.id.drsplhealthpkg);
-        etspecialhealthday = (EditText) findViewById(R.id.drsplhealthpkgrs);
-        ethomevisitfee = (EditText) findViewById(R.id.drhomevisitfee);
+        buttonprofessional.setOnClickListener(this);
         ethomevisitfee.setVisibility(View.GONE);
-        eteveryvisit = (EditText) findViewById(R.id.dreveryvisit);
         eteveryvisit.setVisibility(View.GONE);
-        buttonprofessional = (Button) findViewById(R.id.btnprofessional);
-        rdgroupe=(RadioGroup)findViewById(R.id.radiogrp);
-        rdyes = (RadioButton) findViewById(R.id.radio);
-        rdno = (RadioButton) findViewById(R.id.radio1);
         listitem2 = getResources().getStringArray(R.array.degree_array);
         checkeditem2 = new boolean[listitem2.length];
         listitem3 = getResources().getStringArray(R.array.speciality_array);
@@ -114,10 +136,10 @@ public class UpdateProfessionalActivity extends AppCompatActivity {
             public void onClick(View v) {
                 AlertDialog.Builder MBuilder = new AlertDialog.Builder(UpdateProfessionalActivity.this);
                 MBuilder.setTitle(R.string.dailog_title3);
-               // String local=  SpecialityHolder.replace(",","");
-               // if (speciality.containsAll(Collections.singleton(local))) {
-                   // Toast.makeText(UpdateProfessionalActivity.this, "" + speciality.indexOf(local), Toast.LENGTH_SHORT).show();
-              //  }
+                // String local=  SpecialityHolder.replace(",","");
+                // if (speciality.containsAll(Collections.singleton(local))) {
+                // Toast.makeText(UpdateProfessionalActivity.this, "" + speciality.indexOf(local), Toast.LENGTH_SHORT).show();
+                //  }
                 MBuilder.setMultiChoiceItems(listitem3, checkeditem3, new DialogInterface.OnMultiChoiceClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int position, boolean isChecked) {
@@ -221,29 +243,8 @@ public class UpdateProfessionalActivity extends AppCompatActivity {
             }
         });
 
-        buttonprofessional.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                CheckEditTextIsEmptyOrNot();
-                if (NetworkDetactor.isNetworkAvailable(UpdateProfessionalActivity.this)) {
-                if (CheckEditText) {
-                    UpdateDoctorRegistration(DegreeHolder,RgnumberHolder,SpecialityHolder,OthereSpecialityHolder,DiseaseHolder,OthereDiseasesHolder,WorkHospitalHolder,
-                            ExperienceHolder,SpecialfeeHolder,SpecialValidforHolder,SpecialhealthpkgHolder,SpecialhealthpkgdayHolder,HomevisitHolder,HomevisitfeeHolder,EveryvisitHolder,IdHolder);
-
-                } else {
-
-                    }
-                } else {
-                    Toast.makeText(UpdateProfessionalActivity.this, "No Internet Available", Toast.LENGTH_SHORT).show();
-                }
-
-            }
-        });
-
     }
     public void CheckEditTextIsEmptyOrNot() {
-
         DegreeHolder = etdegree.getText().toString();
         RgnumberHolder = etrgnumber.getText().toString();
         SpecialityHolder = etspeciality.getText().toString();
@@ -364,9 +365,6 @@ public class UpdateProfessionalActivity extends AppCompatActivity {
 
                 super.onPostExecute(httpResponseMsg);
 
-             //   progressDialog.dismiss();
-
-                //Storing Complete JSon Object into String Variable.
                 s = httpResponseMsg;
                 new GetHttpResponse(UpdateProfessionalActivity.this).execute();
                 //Parsing the Stored JSOn String to GetHttpResponse Method.
@@ -388,8 +386,27 @@ public class UpdateProfessionalActivity extends AppCompatActivity {
         HttpWebCallFunction httpWebCallFunction = new HttpWebCallFunction();
 
         httpWebCallFunction.execute(PreviousListViewClickedItem);
-        // SendHttpRequestTask myAsync=new SendHttpRequestTask();
-        // myAsync.execute(PreviousListViewClickedItem);
+
+    }
+
+    @Override
+    public void onClick(View v) {
+        if (v==buttonprofessional){
+            CheckEditTextIsEmptyOrNot();
+            if (NetworkDetactor.isNetworkAvailable(UpdateProfessionalActivity.this)) {
+                if (CheckEditText) {
+                    UpdateDoctorRegistration(DegreeHolder,RgnumberHolder,SpecialityHolder,OthereSpecialityHolder,DiseaseHolder,OthereDiseasesHolder,WorkHospitalHolder,
+                            ExperienceHolder,SpecialfeeHolder,SpecialValidforHolder,SpecialhealthpkgHolder,SpecialhealthpkgdayHolder,HomevisitHolder,HomevisitfeeHolder,EveryvisitHolder,IdHolder);
+
+                } else {
+
+                }
+            } else {
+                Toast.makeText(UpdateProfessionalActivity.this, "No Internet Available", Toast.LENGTH_SHORT).show();
+            }
+
+        }
+
     }
 
     private class GetHttpResponse extends AsyncTask<Void, Void, Void> {

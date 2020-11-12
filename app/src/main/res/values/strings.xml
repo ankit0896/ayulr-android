@@ -44,6 +44,7 @@
     <string name="Chooseplan">Choose Plan</string>
     <string name="show_pwd">Show password</string>
     <string name="hide_pwd">Hide password</string>
+    <string name="prefix">&#160;Dr. |&#160;&#160;</string>
     <string-array name="desig_array">
         <item>DR.</item>
         <item>MR.</item>

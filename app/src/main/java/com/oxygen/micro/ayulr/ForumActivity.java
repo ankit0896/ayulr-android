@@ -55,6 +55,7 @@ public class ForumActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent=new Intent(ForumActivity.this,NewPostActivity.class);
                 startActivity(intent);
+                finish();
             }
         });
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);

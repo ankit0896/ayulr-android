@@ -96,7 +96,7 @@ public class ParaRegisterActivity extends AppCompatActivity {
 
     }
 
-    private void confirmOtp()  {
+   /* private void confirmOtp()  {
         //Creating a LayoutInflater object for the dialog box
         LayoutInflater li = LayoutInflater.from(this);
         //Creating a view to get the dialog box
@@ -179,7 +179,7 @@ public class ParaRegisterActivity extends AppCompatActivity {
                 }
             }
         });
-    }
+    }*/
 
     public void CheckEditTextIsEmptyOrNot(){
         username = editTextUsername.getText().toString().trim();
@@ -227,7 +227,7 @@ public class ParaRegisterActivity extends AppCompatActivity {
                         //Toast.makeText(ActivityUserRegister.this, ""+response, Toast.LENGTH_LONG).show();
                         if (response.equalsIgnoreCase("success")) {
                             loading.dismiss();
-                            confirmOtp();
+                          //  confirmOtp();
 
                         } else {
                             loading.dismiss();

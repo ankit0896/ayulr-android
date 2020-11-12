@@ -21,9 +21,14 @@ import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
+import com.google.android.material.textfield.TextInputEditText;
+import com.oxygen.micro.ayulr.doctor.activity.ActivityLogin;
+
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import butterknife.BindView;
+import butterknife.ButterKnife;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -39,12 +44,35 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class ClinicActivity extends AppCompatActivity {
-EditText ethospital,etfee,etfeevalid,etvisitday,etothervisitday,etcontact,
-    etstate,etcity,etlandmark,etpincode,etaddress;
+public class ClinicActivity extends AppCompatActivity implements View.OnClickListener {
+    @BindView(R.id.drhospital)
+    TextInputEditText ethospital;
+    @BindView(R.id.drfee)
+    TextInputEditText etfee;
+    @BindView(R.id.drfeevalidday)
+    TextInputEditText etfeevalid;
+    @BindView(R.id.drvisitday)
+    EditText etvisitday;
+    @BindView(R.id.drpincode)
+    TextInputEditText etpincode;
+    @BindView(R.id.drlandmark)
+    TextInputEditText etlandmark;
+    @BindView(R.id.draddress)
+    TextInputEditText etaddress;
+    @BindView(R.id.drcontactno)
+    TextInputEditText etcontact;
+    @BindView(R.id.drothervisitday)
+    EditText etothervisitday;
+    @BindView(R.id.state_spinner)
+    Spinner state_spinner;
+    @BindView(R.id.city_spinner)
+    Spinner city_spinner;
+    @BindView(R.id.btnsub)
+    Button buttonclinic;
+    @BindView(R.id.drimage)
+    ImageView drimageView;
     static EditText etmrngtime, etmrngtimeto,etaftertime,etafterto, etevngtime,etevngto,
     etothermrngtime,etothermrngto,etotheraftertime,etotherafterto,etotherevngtime,etotherevngto;
-    Button buttonclinic;
     String HospitalHolder,FeeHolder,FeeValidHolder,VisitHolder,MrngHolder,MrngToHolder,AfterHolder,AfterToHolder,EvngHolder,EvngToHolder,
     OtherVisitHoder,OtherMrngHolder,OtherMrngToHoder,OtherAfterHolder,OtherAfterToHolder,OtherEvngHolder,OtherEvngToHolder,
     ContactHolder,StateHolder,CityHolder,LandmarkHolder,PincodeHolder,AddressHolder,EmailHolder;
@@ -53,7 +81,7 @@ EditText ethospital,etfee,etfeevalid,etvisitday,etothervisitday,etcontact,
     String finalResult;
     HashMap<String, String> hashMap = new HashMap<>();
     HttpParse httpParse = new HttpParse();
-    String HttpURL = "https://ameygraphics.com/ayulr/ayulr_api/clinical.php";
+    String HttpURL = "https://ameygraphics.com/ayulr/api/clinical.php";
     ArrayList<Integer> muserday = new ArrayList<>();
     String[] listitem;
     boolean[] checkeditem;
@@ -97,11 +125,9 @@ EditText ethospital,etfee,etfeevalid,etvisitday,etothervisitday,etcontact,
     private static int otherevngtoHour;
     private static int otherevngtoMinute;
     private static final int Result_Load_Image = 1;
-    ImageView drimageView;
     String ImageHolder;
     Bitmap bitmap;
-    Spinner state_spinner,city_spinner;
-    String HttpURL1 = "https://ameygraphics.com/ayulr/ayulr_api/filter_city.php";
+    String HttpURL1 = "https://ameygraphics.com/ayulr/api/filter_city.php";
     String ParseResult;
     HashMap<String, String> ResultHash = new HashMap<>();
     String se;
@@ -112,36 +138,25 @@ EditText ethospital,etfee,etfeevalid,etvisitday,etothervisitday,etcontact,
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_clinic);
+        ButterKnife.bind(this);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        drimageView = (ImageView) findViewById(R.id.drimage);
         ImageHolder="Noimage.jpeg";
         Intent intent=getIntent();
         EmailHolder=intent.getStringExtra("email");
-        ethospital = (EditText) findViewById(R.id.drhospital);
-        etfee = (EditText) findViewById(R.id.drfee);
-        etfeevalid= (EditText) findViewById(R.id.drfeevalidday);
-        etvisitday = (EditText) findViewById(R.id.drvisitday);
         etmrngtime= (EditText) findViewById(R.id.drmrngtime);
         etmrngtimeto = (EditText) findViewById(R.id.drmrngto);
         etaftertime = (EditText) findViewById(R.id.draftertime);
         etafterto = (EditText) findViewById(R.id.drafterto);
         etevngtime= (EditText) findViewById(R.id.drevngtime);
         etevngto= (EditText) findViewById(R.id.drevngto);
-        etothervisitday= (EditText) findViewById(R.id.drothervisitday);
         etothermrngtime = (EditText) findViewById(R.id.drothermrngtime);
         etothermrngto = (EditText) findViewById(R.id.drothermrngto);
         etotheraftertime = (EditText) findViewById(R.id.drotheraftertime);
         etotherafterto = (EditText) findViewById(R.id.drotherafterto);
         etotherevngtime= (EditText) findViewById(R.id.drotherevngtime);
         etotherevngto = (EditText) findViewById(R.id.drotherevngto);
-        etcontact = (EditText) findViewById(R.id.drcontactno);
-        state_spinner = (Spinner) findViewById(R.id.state_spinner);
-        city_spinner = (Spinner) findViewById(R.id.city_spinner);
-        etlandmark = (EditText) findViewById(R.id.drlandmark);
-        etpincode = (EditText) findViewById(R.id.drpincode);
-        etaddress = (EditText) findViewById(R.id.draddress);
-        buttonclinic = (Button) findViewById(R.id.btnsub);
+        buttonclinic.setOnClickListener(this);
         listitem = getResources().getStringArray(R.array.days_array);
         checkeditem = new boolean[listitem.length];
         listitem1 = getResources().getStringArray(R.array.days_array);
@@ -975,7 +990,7 @@ EditText ethospital,etfee,etfeevalid,etvisitday,etothervisitday,etcontact,
 if (httpResponseMsg.equals("success")) {
 
     Toast.makeText(ClinicActivity.this, "You are registered Successfully\nPlease login to access your account", Toast.LENGTH_LONG).show();
-    Intent intent= new Intent(ClinicActivity.this,ActivityLogin.class);
+    Intent intent= new Intent(ClinicActivity.this, ActivityLogin.class);
     intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
     startActivity(intent);
     finish();
@@ -1156,6 +1171,12 @@ if (httpResponseMsg.equals("success")) {
 
 
     }
+
+    @Override
+    public void onClick(View v) {
+
+    }
+
     class MyAsync extends AsyncTask<Void, Void, String> {
         ProgressDialog progressDialog;
 
@@ -1168,7 +1189,7 @@ if (httpResponseMsg.equals("success")) {
 
         @Override
         protected String doInBackground(Void... params) {
-            String server_url = "https://ameygraphics.com/ayulr/ayulr_api/fetch_city.php";
+            String server_url = "https://ameygraphics.com/ayulr/api/fetch_city.php";
 
             // String server_url = "http://www.w3schools.com/xml/guestbook.asp";
             try {
@@ -1198,7 +1219,6 @@ if (httpResponseMsg.equals("success")) {
                     JSONArray jsonArray = null;
                     try {
                         jsonArray = new JSONArray(se);
-
                         for (int i = 0; i < jsonArray.length(); i++) {
                             JSONObject jobj = jsonArray.getJSONObject(i);
                             cityList.add(jobj.getString("name"));

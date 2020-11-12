@@ -12,6 +12,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import com.google.android.material.tabs.TabLayout;
+import com.oxygen.micro.ayulr.doctor.fragment.ViewClinicalActivity;
+import com.oxygen.micro.ayulr.doctor.fragment.ViewPersonalActivity;
+import com.oxygen.micro.ayulr.doctor.fragment.ViewProfessionalActivity;
 
 import java.util.ArrayList;
 import java.util.List;

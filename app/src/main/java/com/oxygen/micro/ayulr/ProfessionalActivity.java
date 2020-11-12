@@ -15,6 +15,9 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.DialogFragment;
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 import android.util.Base64;
 import android.util.Log;
 import android.view.View;
@@ -28,21 +31,71 @@ import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.google.android.material.textfield.TextInputEditText;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.HashMap;
 
-public class ProfessionalActivity extends AppCompatActivity {
+
+public class ProfessionalActivity extends AppCompatActivity implements View.OnClickListener {
+    @BindView(R.id.category)
     Spinner spinner;
-EditText etdegree,etrgnumber,etspeciality,etotherespeciality,etdisease,etotherediseases,etworkhospital,
-    etexperience,etspecialfee,etspecialvalidfor,etspecialhealthpkg,etspecialhealthday,ethomevisitfee,eteveryvisit,etname,etemail,etcontact;
+    @BindView(R.id.drdegree)
+    TextInputEditText etdegree;
+    @BindView(R.id.drrgnumber)
+    TextInputEditText etrgnumber;
+    @BindView(R.id.drspeciality)
+    TextInputEditText etspeciality;
+    @BindView(R.id.drotherespeciality)
+    TextInputEditText etotherespeciality;
+    @BindView(R.id.drspecialtreat)
+    TextInputEditText etdisease;
+    @BindView(R.id.drotherediseases)
+    TextInputEditText etotherediseases;
+    @BindView(R.id.drwrkhosptl)
+    TextInputEditText etworkhospital;
+    @BindView(R.id.drexperience)
+    TextInputEditText etexperience;
+    @BindView(R.id.drspecialfee)
+    TextInputEditText etspecialfee;
+    @BindView(R.id.drspecialvalidfor)
+    TextInputEditText etspecialvalidfor;
+    @BindView(R.id.drsplhealthpkg)
+    TextInputEditText etspecialhealthpkg;
+    @BindView(R.id.drsplhealthpkgrs)
+    TextInputEditText etspecialhealthday;
+    @BindView(R.id.drhomevisitfee)
+    TextInputEditText ethomevisitfee;
+    @BindView(R.id.dreveryvisit)
+    TextInputEditText eteveryvisit;
+    @BindView(R.id.drName)
+    TextInputEditText etname;
+    @BindView(R.id.dremail)
+    TextInputEditText etemail;
+    @BindView(R.id.drcontact)
+    TextInputEditText etcontact;
     static EditText etdob;
+    @BindView(R.id.btnprofessional)
     Button buttonprofessional;
+    @BindView(R.id.radiogrp)
     RadioGroup rdgroupe;
-    RadioButton rdyes,rdno;
-    String CategoryHolder,DegreeHolder,RgnumberHolder,SpecialityHolder,OthereSpecialityHolder,DiseaseHolder,OthereDiseasesHolder,
+    @BindView(R.id.radio)
+    RadioButton rdyes;
+    @BindView(R.id.radio1)
+    RadioButton rdno;
+    @BindView(R.id.drimage)
+    ImageView drimageView;
+    @BindView(R.id.radio3)
+    RadioButton rdmale;
+    @BindView(R.id.radio4)
+    RadioButton rdfemale;
+    String DocidHolder,CategoryHolder,DegreeHolder,RgnumberHolder,SpecialityHolder,OthereSpecialityHolder,DiseaseHolder,OthereDiseasesHolder,
     WorkHospitalHolder,ExperienceHolder,SpecialfeeHolder,SpecialValidforHolder,SpecialhealthpkgHolder,SpecialhealthpkgdayHolder,
     EveryvisitHolder,HomevisitHolder,EmailHolder,HomevisitfeeHolder,NameHolder,MobileHolder,ImageHolder,DobHolder,GenderHolder;
     Boolean CheckEditText;
@@ -57,8 +110,6 @@ EditText etdegree,etrgnumber,etspeciality,etotherespeciality,etdisease,etothered
     String[] listitem3;
     boolean[] checkeditem3;
     ArrayList<Integer> speciality = new ArrayList<>();
-    ImageView drimageView;
-    RadioButton rdmale,rdfemale;
     private static final int Result_Load_Image = 1;
     private Bitmap bitmap;
     private static int mYear;
@@ -71,69 +122,33 @@ EditText etdegree,etrgnumber,etspeciality,etotherespeciality,etdisease,etothered
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_professional);
+        initview();
+    }
+    private void initview(){
+        ButterKnife.bind(this);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-      //  Intent intent=getIntent();
-        //EmailHolder=intent.getStringExtra("email");
         Intent intent=getIntent();
         NameHolder=intent.getStringExtra("name");
         EmailHolder=intent.getStringExtra("email");
         MobileHolder=intent.getStringExtra("mob");
-        drimageView = (ImageView) findViewById(R.id.drimage);
+        DocidHolder=intent.getStringExtra("docid");
+        Toast.makeText(this, ""+DocidHolder, Toast.LENGTH_SHORT).show();
         ImageHolder="Noimage.jpeg";
-        etname = (EditText) findViewById(R.id.drName);
         etname.setText("Dr."+NameHolder);
-        etdob = (EditText) findViewById(R.id.drdob);
-        etemail= (EditText) findViewById(R.id.dremail);
         etemail.setText(EmailHolder);
-        etcontact = (EditText) findViewById(R.id.drcontact);
         etcontact.setText(MobileHolder);
-        rdmale = (RadioButton) findViewById(R.id.radio3);
-        rdfemale = (RadioButton) findViewById(R.id.radio4);
-        spinner = (Spinner) findViewById(R.id.category);
         String[] Category = {"Select Category","Allopathy","Ayurvedic","Unani","Homeopathy","Siddha","Integrated Medicine"};
         ArrayAdapter adapter = new ArrayAdapter(ProfessionalActivity.this, R.layout.support_simple_spinner_dropdown_item, Category);
         spinner.setAdapter(adapter);
-        etdegree = (EditText) findViewById(R.id.drdegree);
-        etrgnumber = (EditText) findViewById(R.id.drrgnumber);
-        etspeciality= (EditText) findViewById(R.id.drspeciality);
-        etotherespeciality = (EditText) findViewById(R.id.drotherespeciality);
-        etdisease= (EditText) findViewById(R.id.drspecialtreat);
-        etotherediseases = (EditText) findViewById(R.id.drotherediseases);
-        etworkhospital = (EditText) findViewById(R.id.drwrkhosptl);
-        etexperience = (EditText) findViewById(R.id.drexperience);
-        etspecialfee= (EditText) findViewById(R.id.drspecialfee);
-        etspecialvalidfor = (EditText) findViewById(R.id.drspecialvalidfor);
-        etspecialhealthpkg= (EditText) findViewById(R.id.drsplhealthpkg);
-        etspecialhealthday = (EditText) findViewById(R.id.drsplhealthpkgrs);
-        ethomevisitfee = (EditText) findViewById(R.id.drhomevisitfee);
+        etdob=findViewById(R.id.drdob);
         ethomevisitfee.setVisibility(View.GONE);
-        eteveryvisit = (EditText) findViewById(R.id.dreveryvisit);
         eteveryvisit.setVisibility(View.GONE);
-        buttonprofessional = (Button) findViewById(R.id.btnprofessional);
-        rdgroupe=(RadioGroup)findViewById(R.id.radiogrp);
-        rdyes = (RadioButton) findViewById(R.id.radio);
-        rdno = (RadioButton) findViewById(R.id.radio1);
-        etdob.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                DialogFragment newFragment = new DatePickerFragment();
-                newFragment.show(getSupportFragmentManager(), DATE_DIALOG_ID);
-            }
-        });
-        drimageView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                switch (v.getId()) {
-                    case R.id.drimage:
-                        Intent galleryintent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-                        galleryintent.setType("image/*");
-                        startActivityForResult(galleryintent, Result_Load_Image);
-                        break;
-                }
-
-            }
-        });
+        etdob.setOnClickListener(this);
+        drimageView.setOnClickListener(this);
+        buttonprofessional.setOnClickListener(this);
+        etspeciality.setOnClickListener(this);
+        etdegree.setOnClickListener(this);
         listitem2 = getResources().getStringArray(R.array.degree_array);
         checkeditem2 = new boolean[listitem2.length];
         listitem3 = getResources().getStringArray(R.array.speciality_array);
@@ -145,128 +160,32 @@ EditText etdegree,etrgnumber,etspeciality,etotherespeciality,etdisease,etothered
                     ethomevisitfee.setVisibility(View.VISIBLE);
                     eteveryvisit.setVisibility(View.VISIBLE);
                 }else if (checkedId==R.id.radio1){
-                   ethomevisitfee.setVisibility(View.GONE);
+                    ethomevisitfee.setVisibility(View.GONE);
                     eteveryvisit.setVisibility(View.GONE);
                 }
             }
         });
-        etspeciality.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                AlertDialog.Builder MBuilder = new AlertDialog.Builder(ProfessionalActivity.this);
-                MBuilder.setTitle(R.string.dailog_title3);
-                MBuilder.setMultiChoiceItems(listitem3, checkeditem3, new DialogInterface.OnMultiChoiceClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int position, boolean isChecked) {
-                        if (isChecked) {
-                            if (!speciality.contains(position)) {
-                                speciality.add(position);
-                            }
-                        } else if (speciality.contains(position)) {
-                            speciality.remove(position);
 
-                        }
-                    }
-                });
-                MBuilder.setCancelable(false);
-                MBuilder.setPositiveButton(R.string.ok_label, new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        String item = "";
-                        for (int i = 0; i < speciality.size(); i++) {
-                            item = item + listitem3[speciality.get(i)];
-                            if (i != speciality.size() - 1) ;
-                            {
-                                item = item + ",";
-                            }
-                        }
-                        etspeciality.setText(item);
-                    }
-                });
-                MBuilder.setNegativeButton(R.string.dismiss_label, new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        dialog.dismiss();
-                    }
-                });
-                MBuilder.setNeutralButton(R.string.clearall_label, new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        for (int i = 0; i < checkeditem3.length; i++) {
-                            checkeditem3[i] = false;
-                            speciality.clear();
-                            etspeciality.setText("");
-                        }
-                    }
-                });
-                AlertDialog mdialog = MBuilder.create();
-                mdialog.show();
-            }
-        });
+    }
 
-        etdegree.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                AlertDialog.Builder MBuilder = new AlertDialog.Builder(ProfessionalActivity.this);
-                MBuilder.setTitle(R.string.dailog_title2);
-                MBuilder.setMultiChoiceItems(listitem2, checkeditem2, new DialogInterface.OnMultiChoiceClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int position, boolean isChecked) {
-                        if (isChecked) {
-                            if (!degree.contains(position)) {
-                                degree.add(position);
-                            }
-                        } else if (degree.contains(position)) {
-                            degree.remove(position);
-
-                        }
-                    }
-                });
-                MBuilder.setCancelable(false);
-                MBuilder.setPositiveButton(R.string.ok_label, new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        String item = "";
-                        for (int i = 0; i < degree.size(); i++) {
-                            item = item + listitem2[degree.get(i)];
-                            if (i != degree.size() - 1) ;
-                            {
-                                item = item + ",";
-                            }
-                        }
-                        etdegree.setText(item);
-                    }
-                });
-                MBuilder.setNegativeButton(R.string.dismiss_label, new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        dialog.dismiss();
-                    }
-                });
-                MBuilder.setNeutralButton(R.string.clearall_label, new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        for (int i = 0; i < checkeditem2.length; i++) {
-                            checkeditem2[i] = false;
-                            degree.clear();
-                            etdegree.setText("");
-                        }
-                    }
-                });
-                AlertDialog mdialog = MBuilder.create();
-                mdialog.show();
-            }
-        });
-        buttonprofessional.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                CheckEditTextIsEmptyOrNot();
-                if (NetworkDetactor.isNetworkAvailable(ProfessionalActivity.this)) {
+    @Override
+    public void onClick(View v) {
+        if (v==etdob){
+            DialogFragment newFragment = new DatePickerFragment();
+            newFragment.show(getSupportFragmentManager(), DATE_DIALOG_ID);
+        }
+        if (v==drimageView){
+            Intent galleryintent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+            galleryintent.setType("image/*");
+            startActivityForResult(galleryintent, Result_Load_Image);
+        }
+        if (v==buttonprofessional){
+            CheckEditTextIsEmptyOrNot();
+            if (NetworkDetactor.isNetworkAvailable(ProfessionalActivity.this)) {
                 if (CheckEditText) {
                     if (!spinner.getSelectedItem().equals("Select Category")) {
                         DoctorRegistration(NameHolder, DobHolder, GenderHolder, MobileHolder,DegreeHolder, RgnumberHolder, SpecialityHolder, OthereSpecialityHolder, DiseaseHolder, OthereDiseasesHolder, WorkHospitalHolder,
-                                ExperienceHolder, SpecialfeeHolder, SpecialValidforHolder, SpecialhealthpkgHolder, SpecialhealthpkgdayHolder, HomevisitHolder, HomevisitfeeHolder, EveryvisitHolder, EmailHolder,CategoryHolder,ImageHolder);
+                                ExperienceHolder, SpecialfeeHolder, SpecialValidforHolder, SpecialhealthpkgHolder, SpecialhealthpkgdayHolder, HomevisitHolder, HomevisitfeeHolder, EveryvisitHolder, EmailHolder,CategoryHolder,ImageHolder,DocidHolder);
                     }else{
                         Toast.makeText(ProfessionalActivity.this, "Select Category First", Toast.LENGTH_SHORT).show();
                     }
@@ -274,15 +193,113 @@ EditText etdegree,etrgnumber,etspeciality,etotherespeciality,etdisease,etothered
 
 
                 }
-                } else {
-                    Toast.makeText(ProfessionalActivity.this, "No Internet Available", Toast.LENGTH_SHORT).show();
-                }
-
+            } else {
+                Toast.makeText(ProfessionalActivity.this, "No Internet Available", Toast.LENGTH_SHORT).show();
             }
-        });
+        }
+        if (v==etspeciality){
+            AlertDialog.Builder MBuilder = new AlertDialog.Builder(ProfessionalActivity.this);
+            MBuilder.setTitle(R.string.dailog_title3);
+            MBuilder.setMultiChoiceItems(listitem3, checkeditem3, new DialogInterface.OnMultiChoiceClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int position, boolean isChecked) {
+                    if (isChecked) {
+                        if (!speciality.contains(position)) {
+                            speciality.add(position);
+                        }
+                    } else if (speciality.contains(position)) {
+                        speciality.remove(position);
 
+                    }
+                }
+            });
+            MBuilder.setCancelable(false);
+            MBuilder.setPositiveButton(R.string.ok_label, new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    String item = "";
+                    for (int i = 0; i < speciality.size(); i++) {
+                        item = item + listitem3[speciality.get(i)];
+                        if (i != speciality.size() - 1) ;
+                        {
+                            item = item + ",";
+                        }
+                    }
+                    etspeciality.setText(item);
+                }
+            });
+            MBuilder.setNegativeButton(R.string.dismiss_label, new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    dialog.dismiss();
+                }
+            });
+            MBuilder.setNeutralButton(R.string.clearall_label, new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    for (int i = 0; i < checkeditem3.length; i++) {
+                        checkeditem3[i] = false;
+                        speciality.clear();
+                        etspeciality.setText("");
+                    }
+                }
+            });
+            AlertDialog mdialog = MBuilder.create();
+            mdialog.show();
+        }
+        if (v==etdegree){
+            AlertDialog.Builder MBuilder = new AlertDialog.Builder(ProfessionalActivity.this);
+            MBuilder.setTitle(R.string.dailog_title2);
+            MBuilder.setMultiChoiceItems(listitem2, checkeditem2, new DialogInterface.OnMultiChoiceClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int position, boolean isChecked) {
+                    if (isChecked) {
+                        if (!degree.contains(position)) {
+                            degree.add(position);
+                        }
+                    } else if (degree.contains(position)) {
+                        degree.remove(position);
+
+                    }
+                }
+            });
+            MBuilder.setCancelable(false);
+            MBuilder.setPositiveButton(R.string.ok_label, new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    String item = "";
+                    for (int i = 0; i < degree.size(); i++) {
+                        item = item + listitem2[degree.get(i)];
+                        if (i != degree.size() - 1) ;
+                        {
+                            item = item + ",";
+                        }
+                    }
+                    etdegree.setText(item);
+                }
+            });
+            MBuilder.setNegativeButton(R.string.dismiss_label, new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    dialog.dismiss();
+                }
+            });
+            MBuilder.setNeutralButton(R.string.clearall_label, new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    for (int i = 0; i < checkeditem2.length; i++) {
+                        checkeditem2[i] = false;
+                        degree.clear();
+                        etdegree.setText("");
+                    }
+                }
+            });
+            AlertDialog mdialog = MBuilder.create();
+            mdialog.show();
+        }
 
     }
+
     public static class DatePickerFragment extends DialogFragment
             implements DatePickerDialog.OnDateSetListener {
 
@@ -429,7 +446,7 @@ EditText etdegree,etrgnumber,etspeciality,etotherespeciality,etdisease,etothered
 
     }
     public void DoctorRegistration(String doctor_n, String dob,String gender,String cont,String degree, String reg_no,String speciality, String other_speciality,String disease,String other_disease,String work_in,
-                                   String c_exp,String spl_fee,String spl_days,String spl_package, String package_valid_days, String home_visit, String home_visit_fee,String every_visit_fee,String email,String category,String image) {
+                                   String c_exp,String spl_fee,String spl_days,String spl_package, String package_valid_days, String home_visit, String home_visit_fee,String every_visit_fee,String email,String category,String image,String docid) {
 
 
         class DoctorRegistrationClass extends AsyncTask<String, Void, String> {
@@ -445,17 +462,21 @@ EditText etdegree,etrgnumber,etspeciality,etotherespeciality,etdisease,etothered
             protected void onPostExecute(String httpResponseMsg) {
 
                 super.onPostExecute(httpResponseMsg);
-
+                Log.e("httpResponseMsg=", "httpResponseMsg==" + httpResponseMsg);
                 progressDialog.dismiss();
-                  if (httpResponseMsg.equals("success")) {
-                     // Toast.makeText(ProfessionalActivity.this, httpResponseMsg.toString(), Toast.LENGTH_LONG).show();
-                      Intent intent = new Intent(ProfessionalActivity.this, ClinicActivity.class);
-                      intent.putExtra("email", EmailHolder);
-                      startActivity(intent);
-                      finish();
-                  }else{
-                      Toast.makeText(ProfessionalActivity.this, httpResponseMsg.toString(), Toast.LENGTH_LONG).show();
-                  }
+                JSONObject jsonObject= null;
+                try {
+                    jsonObject = new JSONObject(httpResponseMsg);
+                    String code=jsonObject.getString("code");
+                    if (code.equals("200")) {
+                        Intent intent = new Intent(ProfessionalActivity.this, ClinicActivity.class);
+                        intent.putExtra("email", EmailHolder);
+                        startActivity(intent);
+                        finish();
+                    }
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
 
             }
 
@@ -483,6 +504,7 @@ EditText etdegree,etrgnumber,etspeciality,etotherespeciality,etdisease,etothered
                 hashMap.put("email", params[19]);
                 hashMap.put("category", params[20]);
                 hashMap.put("image", params[21]);
+                hashMap.put("id", params[22]);
                 Log.e("some value=", " " + hashMap);
                 finalResult = httpParse.postRequest(hashMap, HttpURL);
                 Log.e("some value=", " " + finalResult);
@@ -493,7 +515,7 @@ EditText etdegree,etrgnumber,etspeciality,etotherespeciality,etdisease,etothered
         DoctorRegistrationClass doctorRegistrationClass = new DoctorRegistrationClass();
 
         doctorRegistrationClass.execute(doctor_n,dob,gender,cont,degree,reg_no,speciality,other_speciality,disease,other_disease,work_in,c_exp,
-                spl_fee,spl_days,spl_package,package_valid_days,home_visit,home_visit_fee,every_visit_fee,email,category,image);
+                spl_fee,spl_days,spl_package,package_valid_days,home_visit,home_visit_fee,every_visit_fee,email,category,image,docid);
     }
 
 }

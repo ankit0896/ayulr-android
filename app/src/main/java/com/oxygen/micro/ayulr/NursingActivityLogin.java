@@ -17,17 +17,27 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.HashMap;
 
-public class NursingActivityLogin extends AppCompatActivity {
-    Button btnreg, btnlogin;
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
+public class NursingActivityLogin extends AppCompatActivity implements View.OnClickListener {
+    @BindView(R.id.buttonRegister)
+    Button btnreg;
+    @BindView(R.id.buttonLogin)
+    Button btnlogin;
+    @BindView(R.id.forgot_password)
     TextView forgot;
-    EditText etuser, etmob;
+    @BindView(R.id.editemail)
+    EditText etuser;
+    @BindView(R.id.editMob)
+    EditText etmob;
     private static CheckBox show_hide_password;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,75 +46,71 @@ public class NursingActivityLogin extends AppCompatActivity {
             finish();
             startActivity(new Intent(this, NursingDashboard.class));
             return;
-
         }
-        btnreg = (Button) findViewById(R.id.buttonRegister);
-        btnlogin = (Button) findViewById(R.id.buttonLogin);
-        forgot = (TextView) findViewById(R.id.forgot_password);
-        etuser = (EditText) findViewById(R.id.editemail);
-        etmob = (EditText) findViewById(R.id.editMob);
-        show_hide_password = (CheckBox)findViewById(R.id.show_hide_password);
-        btnreg.setOnClickListener(new View.OnClickListener() {
+        initViews();
+
+    }
+
+    private void initViews() {
+        ButterKnife.bind(this);
+        show_hide_password = (CheckBox) findViewById(R.id.show_hide_password);
+
+        show_hide_password.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+
             @Override
-            public void onClick(View v) {
-                Intent in = new Intent(NursingActivityLogin.this, NursingRegisterActivity.class);
-                startActivity(in);
-            }
-        });
-        btnlogin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (NetworkDetactor.isNetworkAvailable(NursingActivityLogin.this)) {
-                    userLogin();
+            public void onCheckedChanged(CompoundButton button,
+                                         boolean isChecked) {
+
+                // If it is checkec then show password else hide
+                // password
+                if (isChecked) {
+
+                    show_hide_password.setText(R.string.hide_pwd);// change
+                    // checkbox
+                    // text
+
+                    etmob.setInputType(InputType.TYPE_CLASS_TEXT);
+                    etmob.setTransformationMethod(HideReturnsTransformationMethod
+                            .getInstance());// show password
                 } else {
-                    Toast.makeText(NursingActivityLogin.this, "No Internet Available", Toast.LENGTH_SHORT).show();
+                    show_hide_password.setText(R.string.show_pwd);// change
+                    // checkbox
+                    // text
+
+                    etmob.setInputType(InputType.TYPE_CLASS_TEXT
+                            | InputType.TYPE_TEXT_VARIATION_PASSWORD);
+                    etmob.setTransformationMethod(PasswordTransformationMethod
+                            .getInstance());// hide password
+
                 }
 
             }
         });
-        forgot.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent in = new Intent(NursingActivityLogin.this, ForgotPasswordActivity.class);
-                startActivity(in);
 
-            }
-        });
-        show_hide_password
-                .setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-
-                    @Override
-                    public void onCheckedChanged(CompoundButton button,
-                                                 boolean isChecked) {
-
-                        // If it is checkec then show password else hide
-                        // password
-                        if (isChecked) {
-
-                            show_hide_password.setText(R.string.hide_pwd);// change
-                            // checkbox
-                            // text
-
-                            etmob.setInputType(InputType.TYPE_CLASS_TEXT);
-                            etmob.setTransformationMethod(HideReturnsTransformationMethod
-                                    .getInstance());// show password
-                        } else {
-                            show_hide_password.setText(R.string.show_pwd);// change
-                            // checkbox
-                            // text
-
-                            etmob.setInputType(InputType.TYPE_CLASS_TEXT
-                                    | InputType.TYPE_TEXT_VARIATION_PASSWORD);
-                            etmob.setTransformationMethod(PasswordTransformationMethod
-                                    .getInstance());// hide password
-
-                        }
-
-                    }
-                });
-
+        btnreg.setOnClickListener(this);
+        btnlogin.setOnClickListener(this);
+        forgot.setOnClickListener(this);
     }
 
+    @Override
+    public void onClick(View v) {
+        if (v == btnreg) {
+            Intent in = new Intent(NursingActivityLogin.this, NursingRegisterActivity.class);
+            startActivity(in);
+        }
+        if (v == btnlogin) {
+            if (NetworkDetactor.isNetworkAvailable(NursingActivityLogin.this)) {
+                userLogin();
+            } else {
+                Toast.makeText(NursingActivityLogin.this, "No Internet Available", Toast.LENGTH_SHORT).show();
+            }
+        }
+
+        if (v == forgot) {
+            Intent in = new Intent(NursingActivityLogin.this, ForgotPasswordActivity.class);
+            startActivity(in);
+        }
+    }
 
 
     private void userLogin() {
@@ -113,7 +119,7 @@ public class NursingActivityLogin extends AppCompatActivity {
         final String password = etmob.getText().toString();
 
         //validating inputs
-        if (TextUtils.isEmpty(email)&&(email.matches("[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+"))) {
+        if (TextUtils.isEmpty(email) && (email.matches("[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+"))) {
             etuser.setError("Please enter your username");
             etuser.requestFocus();
             return;
@@ -164,7 +170,7 @@ public class NursingActivityLogin extends AppCompatActivity {
 
                         //storing the user in shared preferences
                         SharedPrefManagernur.getInstance(getApplicationContext()).userLoginNur(nur);
-                        startActivity(new Intent(getApplicationContext(),NursingDashboard.class));
+                        startActivity(new Intent(getApplicationContext(), NursingDashboard.class));
                         finish();
                     } else {
                         Toast.makeText(getApplicationContext(), "Invalid username or password", Toast.LENGTH_SHORT).show();
@@ -193,6 +199,7 @@ public class NursingActivityLogin extends AppCompatActivity {
         UserLogin ul = new UserLogin();
         ul.execute();
     }
+
     @Override
     public void onBackPressed() {
         // TODO Auto-generated method stub
@@ -200,4 +207,6 @@ public class NursingActivityLogin extends AppCompatActivity {
         finish();
         overridePendingTransition(R.animator.open_main, R.animator.close_next);
     }
+
+
 }

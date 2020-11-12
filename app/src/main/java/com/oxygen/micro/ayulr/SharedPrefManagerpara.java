@@ -4,6 +4,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 
+import com.oxygen.micro.ayulr.commonactivity.CategoryActivity;
+
 public class SharedPrefManagerpara {
     private static final String KEY_PARANAME = "keyparaname";
     private static final String KEY_PARAEmail = "keyparaemail";

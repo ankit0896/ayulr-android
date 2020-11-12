@@ -21,12 +21,15 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import butterknife.BindView;
+import butterknife.ButterKnife;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.RequestQueue;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.google.android.material.textfield.TextInputEditText;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -34,42 +37,56 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class MedicateEquipmentActivity extends AppCompatActivity {
+    @BindView(R.id.image)
     ImageView imageView;
-    Spinner group_spinner;
-    RadioButton rdmale,rdfemale,rddonate,rdrent,rdsale,rdexchange;
-    EditText etname,etemail,etcontact,etresidence,etage,etprice,etdes;
+    @BindView(R.id.radio1)
+    RadioButton rdmale;
+    @BindView(R.id.radio2)
+    RadioButton rdfemale;
+    @BindView(R.id.radiogroup1)
+    RadioGroup rdgroupe;
+    @BindView(R.id.radio3)
+    RadioButton rddonate;
+    @BindView(R.id.radio4)
+    RadioButton rdrent;
+    @BindView(R.id.radio5)
+    RadioButton rdsale;
+    @BindView(R.id.radio6)
+    RadioButton rdexchange;
+    @BindView(R.id.name)
+    TextInputEditText etname;
+    @BindView(R.id.email)
+    TextInputEditText etemail;
+    @BindView(R.id.contact)
+    TextInputEditText etcontact;
+    @BindView(R.id.age)
+    TextInputEditText etage;
+    @BindView(R.id.des)
+    TextInputEditText etdes;
+    @BindView(R.id.address)
+    TextInputEditText etresidence;
+    @BindView(R.id.price)
+    TextInputEditText etprice;
+    @BindView(R.id.btnpersonal)
     Button buttonpersonal;
     String ImageHolder, NameHolder,EmailHolder,ContactHolder,ResidenceHolder,AgeHolder,GenderHolder,EquipmentHolder,PriceHolder,DescriptionHolder;
     Boolean CheckEditText;
     private static final int Result_Load_Image = 1;
     private Bitmap bitmap;
     private RequestQueue requestQueue;
-    RadioGroup rdgroupe;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_medicate_equipment);
+        initview();
+    }
+    private void initview(){
+        ButterKnife.bind(this);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         requestQueue = Volley.newRequestQueue(this);
-        imageView = (ImageView) findViewById(R.id.image);
         ImageHolder="Noimage.jpeg";
-        etname = (EditText) findViewById(R.id.name);
-        etemail= (EditText) findViewById(R.id.email);
-        etcontact = (EditText) findViewById(R.id.contact);
-        etage = (EditText) findViewById(R.id.age);
-        etdes = (EditText) findViewById(R.id.des);
-        etprice = (EditText) findViewById(R.id.price);
-        etresidence = (EditText) findViewById(R.id.address);
-        buttonpersonal = (Button) findViewById(R.id.btnpersonal);
-        rdmale = (RadioButton) findViewById(R.id.radio1);
-        rdfemale = (RadioButton) findViewById(R.id.radio2);
-        rdgroupe=(RadioGroup)findViewById(R.id.radiogroup1);
-        rddonate = (RadioButton) findViewById(R.id.radio3);
-        rdrent = (RadioButton) findViewById(R.id.radio4);
-        rdsale = (RadioButton) findViewById(R.id.radio5);
-        rdexchange = (RadioButton) findViewById(R.id.radio6);
         rdgroupe.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, @IdRes int checkedId) {
@@ -77,7 +94,7 @@ public class MedicateEquipmentActivity extends AppCompatActivity {
                     etprice.setVisibility(View.GONE);
                 }else if (checkedId==R.id.radio4){
                     etprice.setVisibility(View.VISIBLE);
-                    }else if (checkedId==R.id.radio5){
+                }else if (checkedId==R.id.radio5){
                     etprice.setVisibility(View.VISIBLE);
                 }else if (checkedId==R.id.radio6){
                     etprice.setVisibility(View.GONE);
@@ -103,9 +120,7 @@ public class MedicateEquipmentActivity extends AppCompatActivity {
                 CheckEditTextIsEmptyOrNot();
                 if (NetworkDetactor.isNetworkAvailable(MedicateEquipmentActivity.this)) {
                     if (CheckEditText) {
-
-                            register();
-
+                        register();
                     } else {
                         // Toast.makeText(PatientActivity.this, "Please fill all form fields.", Toast.LENGTH_LONG).show();
                     }
@@ -114,7 +129,6 @@ public class MedicateEquipmentActivity extends AppCompatActivity {
                 }
             }
         });
-
     }
 
     @Override

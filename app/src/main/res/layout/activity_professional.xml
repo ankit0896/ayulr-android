@@ -33,63 +33,58 @@
                 android:layout_gravity="center"
                 app:civ_border_width="2dp"
                 app:civ_border_color="#FF000000"/>
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-                <EditText
-                    android:id="@+id/drName"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="10dp"
-                    android:hint="@string/text_dr_name"
-                    android:ems="10"
-                    android:editable="false"
-                    android:padding="7dp"
-                    android:textSize="14sp">
-                </EditText>
-            </com.google.android.material.textfield.TextInputLayout>
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
 
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_marginBottom="10dp">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/drName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/text_dr_name"
+                    android:editable="false"
+                    android:textSize="16sp"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_marginBottom="10dp">
                 <EditText
                     android:id="@+id/drdob"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="10dp"
-                    android:ems="10"
                     android:hint="Date of Birth(DD/MM/YYYY)*"
                     android:editable="false"
-                    android:padding="7dp"
-                    android:textSize="14sp"></EditText>
+                    android:textSize="16sp"/>
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:editable="false">
-                <EditText
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_marginBottom="10dp">
+                <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/dremail"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="10dp"
                     android:hint="Email Id*"
-                    android:textSize="14sp"
-                    android:editable="false"
-                    android:ems="10" >
-                </EditText>
+                    android:textSize="16sp"
+                    android:editable="false"/>
             </com.google.android.material.textfield.TextInputLayout>
+
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:editable="false">
-
-                <EditText
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_marginBottom="10dp">
+                <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/drcontact"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="10dp"
-                    android:ems="10"
                     android:hint="Mobile Number*"
                     android:editable="false"
                     android:maxLength="10"
@@ -100,6 +95,7 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/radiogroup"
                 android:paddingTop="5dp"
+                android:layout_marginLeft="10dp"
                 android:orientation="horizontal">
                 <TextView
                     android:layout_width="wrap_content"
@@ -135,185 +131,188 @@
 
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-                <EditText
+                android:layout_height="wrap_content"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:editable="false"
+                android:layout_marginBottom="10dp">
+                <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/drdegree"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="10dp"
                     android:hint="Select your degree*"
                     android:editable="false"
-                    android:textSize="14sp"
-                    android:ems="10" >
-                </EditText>
+                    android:textSize="16sp"/>
             </com.google.android.material.textfield.TextInputLayout>
+
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-                <EditText
+                android:layout_height="wrap_content"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_marginBottom="10dp">
+                <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/drrgnumber"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="10dp"
                     android:hint="Registration Number*"
-                    android:ems="10"
-                    android:padding="7dp"
-                    android:textSize="14sp">
-                </EditText>
+                    android:textSize="16sp"/>
             </com.google.android.material.textfield.TextInputLayout>
+
             <com.google.android.material.textfield.TextInputLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-                    <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:editable="false"
+                android:layout_marginBottom="10dp">
+                <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/drspeciality"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="10dp"
                         android:hint="Select your Speciality*"
                         android:editable="false"
-                        android:textSize="14sp"
-                        android:ems="10" >
-                    </EditText>
+                        android:textSize="16sp"/>
                 </com.google.android.material.textfield.TextInputLayout>
+
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-                <EditText
+                android:layout_height="wrap_content"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_marginBottom="10dp">
+                <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/drotherespeciality"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="10dp"
-                    android:ems="10"
                     android:hint="Other Speciality"
                     android:inputType="textCapSentences"
-                    android:padding="7dp"
-                    android:textSize="14sp" >
-                </EditText>
+                    android:textSize="16sp" />
             </com.google.android.material.textfield.TextInputLayout>
+
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <EditText
+                android:layout_height="wrap_content"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_marginBottom="10dp">
+                <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/drspecialtreat"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="10dp"
-                    android:ems="10"
                     android:hint="Specialized in treating (Disease)"
                     android:inputType="textCapSentences"
-                    android:textSize="14sp"></EditText>
+                    android:textSize="16sp"/>
             </com.google.android.material.textfield.TextInputLayout>
+
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-                <EditText
+                android:layout_height="wrap_content"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_marginBottom="10dp">
+                <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/drotherediseases"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="10dp"
                     android:hint="Also treat other diseases"
-                    android:textSize="14sp"
-                    android:inputType="textCapSentences"
-                    android:ems="10" >
-                </EditText>
+                    android:textSize="16sp"
+                    android:inputType="textCapSentences"/>
             </com.google.android.material.textfield.TextInputLayout>
+
+
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-                <EditText
+                android:layout_height="wrap_content"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_marginBottom="10dp">
+                <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/drwrkhosptl"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="10dp"
                     android:hint="Worked in Clinic/Hospital/Nursing home"
                     android:inputType="textCapSentences"
-                    android:textSize="14sp"
-                    android:ems="10" >
-                </EditText>
+                    android:textSize="16sp"/>
             </com.google.android.material.textfield.TextInputLayout>
+
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-                <EditText
+                android:layout_height="wrap_content"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_marginBottom="10dp">
+                <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/drexperience"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="10dp"
                     android:hint="Clinic/Hospital/Nursing home Experience*"
                     android:inputType="number"
-                    android:textSize="14sp"
-                    android:ems="10" >
-                </EditText>
+                    android:textSize="16sp"/>
             </com.google.android.material.textfield.TextInputLayout>
 
 
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" >
+                android:layout_height="wrap_content"
+                android:weightSum="2">
                 <com.google.android.material.textfield.TextInputLayout
-                    android:layout_width="200dp"
-                    android:layout_height="wrap_content">
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_marginBottom="10dp">
 
-                    <EditText
+                    <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/drspecialfee"
-                        android:layout_width="200dp"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="@string/special_fee"
-                        android:layout_marginBottom="10dp"
                         android:inputType="number"
-                        android:textSize="14sp"
-                        android:ems="10"/>
+                        android:textSize="16sp"/>
                 </com.google.android.material.textfield.TextInputLayout>
                 <com.google.android.material.textfield.TextInputLayout
-                    android:layout_width="150dp"
-                    android:layout_height="wrap_content">
-                    <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_marginBottom="10dp">
+                    <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/drspecialvalidfor"
-                        android:layout_width="150dp"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint=" Valid For Days"
-                        android:layout_marginBottom="10dp"
-                        android:layout_marginLeft="10dp"
                         android:inputType="number"
-                        android:textSize="14sp"
-                        android:ems="10"/>
+                        android:textSize="16sp"/>
                 </com.google.android.material.textfield.TextInputLayout>
 
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" >
+                android:layout_height="wrap_content"
+                android:weightSum="2">
                 <com.google.android.material.textfield.TextInputLayout
-                    android:layout_width="200dp"
-                    android:layout_height="wrap_content">
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_marginBottom="10dp">
 
-                    <EditText
+                    <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/drsplhealthpkg"
-                        android:layout_width="200dp"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="10dp"
                         android:hint="@string/special_health_package"
                         android:inputType="textCapSentences"
-                        android:textSize="14sp"
-                        android:ems="10" >
-                    </EditText>
+                        android:textSize="16sp"/>
                 </com.google.android.material.textfield.TextInputLayout>
                 <com.google.android.material.textfield.TextInputLayout
-                    android:layout_width="150dp"
-                    android:layout_height="wrap_content">
-                    <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_marginBottom="10dp">
+                    <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/drsplhealthpkgrs"
-                        android:layout_width="152dp"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="10dp"
-                        android:layout_marginLeft="10dp"
                         android:hint="Valid For Days"
                         android:inputType="number"
-                        android:textSize="14sp"
-                        android:ems="10" >
-                    </EditText>
+                        android:textSize="16sp"/>
                 </com.google.android.material.textfield.TextInputLayout>
             </LinearLayout>
 
@@ -323,6 +322,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/radiogrp"
+                    android:layout_marginLeft="10dp"
                     android:orientation="horizontal">
                     <TextView
                         android:id="@+id/txt"
@@ -346,35 +346,35 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" >
+                android:layout_height="wrap_content"
+                android:weightSum="2">
                 <com.google.android.material.textfield.TextInputLayout
-                    android:layout_width="150dp"
-                    android:layout_height="wrap_content">
-                    <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_marginBottom="10dp">
+                    <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/drhomevisitfee"
-                        android:layout_width="150dp"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="10dp"
                         android:hint="@string/home_visit"
                         android:inputType="number"
-                        android:textSize="14sp"
-                        android:ems="10" >
-                    </EditText>
+                        android:textSize="16sp"/>
                 </com.google.android.material.textfield.TextInputLayout>
                 <com.google.android.material.textfield.TextInputLayout
-                    android:layout_width="150dp"
-                    android:layout_height="wrap_content">
-                    <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_marginBottom="10dp">
+                    <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/dreveryvisit"
-                        android:layout_width="150dp"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="10dp"
-                        android:layout_marginLeft="20dp"
                         android:hint="Valid Fors Days"
                         android:inputType="number"
-                        android:textSize="14sp"
-                        android:ems="10" >
-                    </EditText>
+                        android:textSize="16sp"/>
                 </com.google.android.material.textfield.TextInputLayout>
             </LinearLayout>
 

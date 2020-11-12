@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -14,44 +15,35 @@
         android:orientation="vertical" >
                 <ImageView
                     android:id="@+id/imageView1"
-                    android:layout_width="100dp"
+                    android:layout_width="150dp"
                     android:layout_height="100dp"
                     android:layout_gravity="center"
                     android:src="@drawable/ayulrlogo"/>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
 
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="18sp"
-            android:layout_marginTop="22dp"
-            android:text="Dr."/>
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/name"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            >
-            <EditText
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:prefixText="@string/prefix"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+                <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/editname"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Dr Name"
+                android:hint="Full Name"
                 android:inputType="textCapSentences"
                 android:lines="1"
                 android:maxLines="1"
                 android:textSize="16sp"
                 android:singleLine="true" />
         </com.google.android.material.textfield.TextInputLayout>
-        </LinearLayout>
-                    <com.google.android.material.textfield.TextInputLayout
-                        android:id="@+id/layoutname"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-                    <EditText
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+            <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/editemail"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -61,14 +53,15 @@
                         android:maxLines="1"
                         android:textSize="16sp"
                         android:singleLine="true" />
-                </com.google.android.material.textfield.TextInputLayout>
+        </com.google.android.material.textfield.TextInputLayout>
 
-                    <com.google.android.material.textfield.TextInputLayout
-                        android:id="@+id/layoutemail"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        app:passwordToggleEnabled="true">
-                    <EditText
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:passwordToggleEnabled="true"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+            <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/editpass"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -79,11 +72,12 @@
                         android:textSize="16sp"
                         android:singleLine="true" />
                     </com.google.android.material.textfield.TextInputLayout>
-                    <com.google.android.material.textfield.TextInputLayout
-                        android:id="@+id/layoutmob"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-                    <EditText
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/mobile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+            <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/editmob"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -94,19 +88,16 @@
                         android:maxLines="1" />
                     </com.google.android.material.textfield.TextInputLayout>
 
-
-                <androidx.appcompat.widget.AppCompatButton
-                    android:id="@+id/buttonRegister"
-                    android:layout_width="fill_parent"
-                    android:layout_height="40dp"
-                    android:layout_marginTop="15dp"
-                    android:text="Verify Now"
-                    android:padding="3dp"
-                    android:textColor="#fff"
-                    android:textSize="16sp"
-                    android:background="@drawable/newloginbtn" />
-
-
+        <Button
+            android:id="@+id/buttonRegister"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="15dp"
+            android:text="Verify Now"
+            android:padding="3dp"
+            android:textColor="#fff"
+            android:textSize="16sp"
+            android:background="@drawable/newloginbtn" />
 
     </LinearLayout>
     <ProgressBar

@@ -9,7 +9,6 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.TextView;
@@ -20,23 +19,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
 import androidx.appcompat.widget.Toolbar;
 
-import com.android.volley.AuthFailureError;
-import com.android.volley.Request;
-import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.StringRequest;
-import com.android.volley.toolbox.Volley;
+import com.oxygen.micro.ayulr.doctor.activity.ActivityLogin;
 import com.razorpay.Checkout;
-import com.razorpay.PaymentData;
 import com.razorpay.PaymentResultListener;
-import com.razorpay.PaymentResultWithDataListener;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.HashMap;
-import java.util.Map;
 
 public class StandardPlan extends AppCompatActivity implements PaymentResultListener{
     TextView textView;
@@ -48,7 +38,7 @@ public class StandardPlan extends AppCompatActivity implements PaymentResultList
     HttpParse httpParse = new HttpParse();
     String PaymentHolder;
     RadioButton rdcash,rdonline;
-    private AppCompatButton buttonConfirm;
+    private Button buttonConfirm;
     Button button;
     String EmailHolder;
     @Override
@@ -85,7 +75,7 @@ public class StandardPlan extends AppCompatActivity implements PaymentResultList
         //Initizliaing confirm button fo dialog box and edittext of dialog box
         rdcash=(RadioButton)confirmDialog.findViewById(R.id.radio);
         rdonline=(RadioButton)confirmDialog.findViewById(R.id.radio1);
-        buttonConfirm = (AppCompatButton) confirmDialog.findViewById(R.id.buttonConfirm);
+        buttonConfirm = (Button) confirmDialog.findViewById(R.id.buttonConfirm);
 
 
         //Creating an alertdialog builder
@@ -171,7 +161,7 @@ public class StandardPlan extends AppCompatActivity implements PaymentResultList
                 pDialog.dismiss();
                 if (httpResponseMsg.equals("success")) {
                     Toast.makeText(StandardPlan.this, "You are registered Successfully\nPlease login to access your account", Toast.LENGTH_LONG).show();
-                    Intent intent= new Intent(StandardPlan.this,ActivityLogin.class);
+                    Intent intent= new Intent(StandardPlan.this, ActivityLogin.class);
                     intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                     startActivity(intent);
                     finish();

@@ -49,7 +49,7 @@ public class BloodDonorAdapter extends RecyclerView.Adapter<BloodDonorAdapter.Bl
             holder.textViewName.setText(bloodDonor.getName());
             holder.textViewEmail.setText(bloodDonor.getEmail());
             holder.textViewContact.setText(bloodDonor.getContact());
-            Glide.with(mCtx).load("http://ayulr.com/donor_image/" + donorList.get(position).getImage()).into(holder.imageView);
+            Glide.with(mCtx).load("http://ameygraphics.com/ayulr/donor_image/" + donorList.get(position).getImage()).into(holder.imageView);
             holder.btnbook.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

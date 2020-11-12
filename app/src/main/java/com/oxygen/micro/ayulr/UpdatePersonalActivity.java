@@ -14,6 +14,9 @@ import android.provider.MediaStore;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.DialogFragment;
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 import android.os.Bundle;
 import android.util.Base64;
 import android.util.Log;
@@ -28,6 +31,9 @@ import android.widget.RadioButton;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.google.android.material.textfield.TextInputEditText;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -44,17 +50,49 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.HashMap;
 
-public class UpdatePersonalActivity extends AppCompatActivity {
+
+public class UpdatePersonalActivity extends AppCompatActivity implements View.OnClickListener {
     String HttpURL1 = Config.BASEURL+"filter_view.php";
     String ParseResult;
     HashMap<String, String> ResultHash = new HashMap<>();
     String s;
+    @BindView(R.id.drimage)
     ImageView drimageView;
-    RadioButton rdmale,rdfemale;
-    EditText etname,etemail,etcontact,etmember,etcollege,etmedalyear,etmedalfor,
-            etawardas,etawardfor,etresidence,etstate,etcity,etlandmark,etpincode;
-    static EditText etdob,etanniversary;
+    @BindView(R.id.drName)
+    TextInputEditText etname;
+    @BindView(R.id.dremail)
+    TextInputEditText etemail;
+    @BindView(R.id.drcontact)
+    TextInputEditText etcontact;
+    @BindView(R.id.drmember)
+    TextInputEditText etmember;
+    @BindView(R.id.drcollege)
+    TextInputEditText etcollege;
+    @BindView(R.id.drmedalyear)
+    TextInputEditText etmedalyear;
+    @BindView(R.id.drmedalfor)
+    TextInputEditText etmedalfor;
+    @BindView(R.id.drawardas)
+    TextInputEditText etawardas;
+    @BindView(R.id.drawardfor)
+    TextInputEditText etawardfor;
+    @BindView(R.id.drresidential)
+    TextInputEditText etresidence;
+    @BindView(R.id.drlandmark)
+    TextInputEditText etlandmark;
+    @BindView(R.id.drpincode)
+    TextInputEditText etpincode;
+    @BindView(R.id.btnpersonal)
     Button buttonpersonal;
+    @BindView(R.id.state_spinner)
+    Spinner state_spinner;
+    @BindView(R.id.city_spinner)
+    Spinner city_spinner;
+    @BindView(R.id.radio)
+    RadioButton rdmale;
+    @BindView(R.id.radio1)
+    RadioButton rdfemale;
+    static EditText etdob,etanniversary;
     String IdHolder,ImageHolder, DrNameHolder,DobHolder,EmailHolder,ContactHolder,AnniversaryHolder,MemberHolder,
             CollegeHolder,MedalyearHolder,MedalforHolder,AwardasHolder,AwardforHolder,ResidenceHolder,StateHolder,CityHolder,CodeHolder,
             LandmarkHolder,PincodeHolder,GenderHolder;
@@ -73,7 +111,6 @@ public class UpdatePersonalActivity extends AppCompatActivity {
     private static int mDay;
     static final String DATE_DIALOG_ID = "datePicker";
     static final String DATE_DIALOG_ID2 = "datePicker";
-    Spinner state_spinner,city_spinner;
     CityAdapter cityAdapter;
     String se;
     static ArrayList<String> city= new ArrayList<String>();
@@ -82,34 +119,21 @@ public class UpdatePersonalActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_update_personal);
+        initview();
+
+    }
+    private void initview(){
+        ButterKnife.bind(this);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         drimageView = (ImageView) findViewById(R.id.drimage);
-       // ImageHolder = String.valueOf(getResources().getDrawable(R.drawable.profileimage));
-        etname = (EditText) findViewById(R.id.drName);
+        // ImageHolder = String.valueOf(getResources().getDrawable(R.drawable.profileimage));
         etdob = (EditText) findViewById(R.id.drdob);
-        etemail= (EditText) findViewById(R.id.dremail);
-        etcontact = (EditText) findViewById(R.id.drcontact);
         etanniversary= (EditText) findViewById(R.id.dranniversary);
-        etmember = (EditText) findViewById(R.id.drmember);
-        etcollege = (EditText) findViewById(R.id.drcollege);
-        etmedalyear = (EditText) findViewById(R.id.drmedalyear);
-        etmedalfor= (EditText) findViewById(R.id.drmedalfor);
-        etawardas = (EditText) findViewById(R.id.drawardas);
-        etawardfor= (EditText) findViewById(R.id.drawardfor);
-        etresidence = (EditText) findViewById(R.id.drresidential);
-        state_spinner = (Spinner) findViewById(R.id.state_spinner);
-        city_spinner = (Spinner) findViewById(R.id.city_spinner);
-        etlandmark = (EditText) findViewById(R.id.drlandmark);
-        etpincode = (EditText) findViewById(R.id.drpincode);
-        buttonpersonal = (Button) findViewById(R.id.btnpersonal);
-        rdmale = (RadioButton) findViewById(R.id.radio);
-        rdfemale = (RadioButton) findViewById(R.id.radio1);
         cityAdapter = new CityAdapter(this);
         stateAdapter = new StateAdapter(UpdatePersonalActivity.this, State,Code);
         state_spinner.setAdapter(stateAdapter);
-
         User user = SharedPrefManager.getInstance(UpdatePersonalActivity.this).getUser();
         IdHolder = String.valueOf(user.getId());
         Log.e("value=", " " + IdHolder);
@@ -118,52 +142,10 @@ public class UpdatePersonalActivity extends AppCompatActivity {
         } else {
             Toast.makeText(UpdatePersonalActivity.this, "No Internet Available", Toast.LENGTH_SHORT).show();
         }
-
-        buttonpersonal.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                GetDataFromImageView();
-                CheckEditTextIsEmptyOrNot();
-                if (NetworkDetactor.isNetworkAvailable(UpdatePersonalActivity.this)) {
-                if (CheckEditText) {
-                    UpdateDoctorRegistration(DrNameHolder,DobHolder,GenderHolder,EmailHolder,ContactHolder,CollegeHolder,MemberHolder,
-                            AnniversaryHolder, MedalyearHolder,MedalforHolder,AwardasHolder,AwardforHolder,ResidenceHolder,StateHolder,CityHolder,LandmarkHolder,PincodeHolder,ImageHolder,IdHolder);
-
-                } else {
-
-                }
-                } else {
-                    Toast.makeText(UpdatePersonalActivity.this, "No Internet Available", Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
-        drimageView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                switch (v.getId()) {
-                    case R.id.drimage:
-                        Intent galleryintent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-                        galleryintent.setType("image/*");
-                        startActivityForResult(galleryintent, Result_Load_Image);
-                        break;
-                }
-
-            }
-        });
-        etdob.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                DialogFragment newFragment = new DatePickerFragment();
-                newFragment.show(getSupportFragmentManager(), DATE_DIALOG_ID);
-            }
-        });
-        etanniversary.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                DialogFragment newFragment = new DatePickerFragment2();
-                newFragment.show(getSupportFragmentManager(), DATE_DIALOG_ID2);
-            }
-        });
+        buttonpersonal.setOnClickListener(this);
+        drimageView.setOnClickListener(this);
+        etdob.setOnClickListener(this);
+        etanniversary.setOnClickListener(this);
         state_spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
@@ -173,8 +155,6 @@ public class UpdatePersonalActivity extends AppCompatActivity {
                 StateHolder = state_TV.getText().toString();
                 CodeHolder = code_TV.getText().toString();
                 HttpWeb(CodeHolder);
-
-
             }
 
             @Override
@@ -195,6 +175,38 @@ public class UpdatePersonalActivity extends AppCompatActivity {
 
             }
         });
+    }
+
+    @Override
+    public void onClick(View v) {
+        if (v==buttonpersonal){
+            GetDataFromImageView();
+            CheckEditTextIsEmptyOrNot();
+            if (NetworkDetactor.isNetworkAvailable(UpdatePersonalActivity.this)) {
+                if (CheckEditText) {
+                    UpdateDoctorRegistration(DrNameHolder,DobHolder,GenderHolder,EmailHolder,ContactHolder,CollegeHolder,MemberHolder,
+                            AnniversaryHolder, MedalyearHolder,MedalforHolder,AwardasHolder,AwardforHolder,ResidenceHolder,StateHolder,CityHolder,LandmarkHolder,PincodeHolder,ImageHolder,IdHolder);
+
+                } else {
+
+                }
+            } else {
+                Toast.makeText(UpdatePersonalActivity.this, "No Internet Available", Toast.LENGTH_SHORT).show();
+            }
+        }
+        if (v==drimageView){
+            Intent galleryintent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+            galleryintent.setType("image/*");
+            startActivityForResult(galleryintent, Result_Load_Image);
+        }
+        if (v==etdob){
+            DialogFragment newFragment = new DatePickerFragment();
+            newFragment.show(getSupportFragmentManager(), DATE_DIALOG_ID);
+        }
+        if (v==etanniversary){
+            DialogFragment newFragment = new DatePickerFragment2();
+            newFragment.show(getSupportFragmentManager(), DATE_DIALOG_ID2);
+        }
     }
 
     public static class DatePickerFragment extends DialogFragment
@@ -299,12 +311,9 @@ public class UpdatePersonalActivity extends AppCompatActivity {
     public void GetDataFromImageView() {
         drimageView.setImageBitmap(bitmap);
         ImageHolder=getStringImage(bitmap);
-
-
     }
 
     public void CheckEditTextIsEmptyOrNot() {
-
         DrNameHolder = etname.getText().toString();
         DobHolder = etdob.getText().toString();
         EmailHolder = etemail.getText().toString();
@@ -383,9 +392,9 @@ public class UpdatePersonalActivity extends AppCompatActivity {
             protected void onPostExecute(String httpResponseMsg) {
                 super.onPostExecute(httpResponseMsg);
                 progressDialog.dismiss();
-                if (httpResponseMsg.equals("success")) {
-                    Toast.makeText(UpdatePersonalActivity.this, httpResponseMsg.toString(), Toast.LENGTH_LONG).show();
-                    Intent intent = new Intent(UpdatePersonalActivity.this,Main2Activity.class);
+                String code=httpResponseMsg.toString().trim();
+                if (code.equals("200")) {
+                    Intent intent = new Intent(UpdatePersonalActivity.this, Main2Activity.class);
                     startActivity(intent);
                     finish();
                 }else{
@@ -514,7 +523,7 @@ public class UpdatePersonalActivity extends AppCompatActivity {
                             ImageHolder = jobj.getString("profile_img");
                             if (!ImageHolder.equals("profile_img")) {
                                 // byte[] b = Base64.decode(ImageHolder, Base64.DEFAULT);
-                                InputStream is = new java.net.URL("http://ayulr.com/images/"+ImageHolder).openStream();
+                                InputStream is = new java.net.URL("http://ameygraphics.com/ayulr/images/"+ImageHolder).openStream();
 
                                 bitmap = BitmapFactory.decodeStream(is);
 

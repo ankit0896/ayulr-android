@@ -50,7 +50,7 @@ public class EquipmentDonorAdapter extends RecyclerView.Adapter<EquipmentDonorAd
         holder.textViewName.setText(equipmenDonor.getName());
         holder.textViewEmail.setText(equipmenDonor.getEmail());
         holder.textViewContact.setText(equipmenDonor.getContact());
-        Glide.with(mCtx).load("http://ayulr.com/equip_image/" + donorList.get(position).getImage()).into(holder.imageView);
+        Glide.with(mCtx).load("http://ameygraphics.com/ayulr/images/"+donorList.get(position).getImage()).into(holder.imageView);
         holder.btnbook.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

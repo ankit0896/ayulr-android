@@ -21,22 +21,47 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import butterknife.BindView;
+import butterknife.ButterKnife;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.RequestQueue;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.google.android.material.textfield.TextInputEditText;
+
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
-public class BloodDonateActivity extends AppCompatActivity {
+
+
+public class BloodDonateActivity extends AppCompatActivity implements View.OnClickListener {
+    @BindView(R.id.image)
     ImageView imageView;
+    @BindView(R.id.group_spinner)
     Spinner group_spinner;
-    RadioButton rdmale,rdfemale,rdnew,rdregular;
-    EditText etname,etemail,etcontact,etresidence,etage;
+    @BindView(R.id.radio1)
+    RadioButton rdmale;
+    @BindView(R.id.radio2)
+    RadioButton rdfemale;
+    @BindView(R.id.radio3)
+    RadioButton rdnew;
+    @BindView(R.id.radio4)
+    RadioButton rdregular;
+    @BindView(R.id.name)
+    TextInputEditText etname;
+    @BindView(R.id.email)
+    TextInputEditText etemail;
+    @BindView(R.id.contact)
+    TextInputEditText etcontact;
+    @BindView(R.id.age)
+    TextInputEditText etage;
+    @BindView(R.id.address)
+    TextInputEditText etresidence;
+    @BindView(R.id.btnpersonal)
     Button buttonpersonal;
     String ImageHolder, NameHolder,EmailHolder,ContactHolder,ResidenceHolder,GroupHolder,AgeHolder,
             TypeHolder,GenderHolder;
@@ -48,23 +73,18 @@ public class BloodDonateActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_blood_donate);
+        initview();
+    }
+    private void initview(){
+        ButterKnife.bind(this);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         requestQueue = Volley.newRequestQueue(this);
         imageView = (ImageView) findViewById(R.id.image);
         ImageHolder="Noimage.jpeg";
-        etname = (EditText) findViewById(R.id.name);
-        etemail= (EditText) findViewById(R.id.email);
-        etcontact = (EditText) findViewById(R.id.contact);
-        etage = (EditText) findViewById(R.id.age);
-        etresidence = (EditText) findViewById(R.id.address);
-        group_spinner = (Spinner) findViewById(R.id.group_spinner);
-        buttonpersonal = (Button) findViewById(R.id.btnpersonal);
-        rdmale = (RadioButton) findViewById(R.id.radio1);
-        rdfemale = (RadioButton) findViewById(R.id.radio2);
-        rdnew = (RadioButton) findViewById(R.id.radio3);
-        rdregular = (RadioButton) findViewById(R.id.radio4);
+        buttonpersonal.setOnClickListener(this);
+        imageView.setOnClickListener(this);
         GroupeAdapter groupeAdapter = new GroupeAdapter(BloodDonateActivity.this, Groupe);
         group_spinner.setAdapter(groupeAdapter);
         group_spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -72,46 +92,13 @@ public class BloodDonateActivity extends AppCompatActivity {
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 TextView group_TV = (TextView) view.findViewById(R.id.groupe_TV);
                 GroupHolder = group_TV.getText().toString();
-                }
+            }
 
             @Override
             public void onNothingSelected(AdapterView<?> adapterView) {
 
             }
         });
-        imageView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                switch (v.getId()) {
-                    case R.id.image:
-                        Intent galleryintent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-                        galleryintent.setType("image/*");
-                        startActivityForResult(galleryintent, Result_Load_Image);
-                        break;
-                }
-
-            }
-        });
-        buttonpersonal.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                CheckEditTextIsEmptyOrNot();
-                if (NetworkDetactor.isNetworkAvailable(BloodDonateActivity.this)) {
-                    if (CheckEditText) {
-                        if (!(GroupHolder.equals("Select Blood Group"))){
-                             register();
-                        }else{
-                            Toast.makeText(BloodDonateActivity.this, "Select Blood Groupe", Toast.LENGTH_SHORT).show();
-                        }
-                    } else {
-                        // Toast.makeText(PatientActivity.this, "Please fill all form fields.", Toast.LENGTH_LONG).show();
-                    }
-                } else {
-                    Toast.makeText(BloodDonateActivity.this, "No Internet Available", Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
-
     }
 
     @Override
@@ -283,4 +270,28 @@ public class BloodDonateActivity extends AppCompatActivity {
         return true;
     }
 
+    @Override
+    public void onClick(View v) {
+        if (v==buttonpersonal){
+            CheckEditTextIsEmptyOrNot();
+            if (NetworkDetactor.isNetworkAvailable(BloodDonateActivity.this)) {
+                if (CheckEditText) {
+                    if (!(GroupHolder.equals("Select Blood Group"))){
+                        register();
+                    }else{
+                        Toast.makeText(BloodDonateActivity.this, "Select Blood Groupe", Toast.LENGTH_SHORT).show();
+                    }
+                } else {
+                    // Toast.makeText(PatientActivity.this, "Please fill all form fields.", Toast.LENGTH_LONG).show();
+                }
+            } else {
+                Toast.makeText(BloodDonateActivity.this, "No Internet Available", Toast.LENGTH_SHORT).show();
+            }
+        }
+        if (v==imageView){
+            Intent galleryintent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+            galleryintent.setType("image/*");
+            startActivityForResult(galleryintent, Result_Load_Image);
+        }
+    }
 }

@@ -19,8 +19,12 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.material.textfield.TextInputEditText;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import butterknife.BindView;
+import butterknife.ButterKnife;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -30,14 +34,20 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.HashMap;
 
-public class AddVideoActivity extends AppCompatActivity {
-    EditText etname,etlink,etdesig;
+public class AddVideoActivity extends AppCompatActivity implements View.OnClickListener {
+    @BindView(R.id.edtname)
+    TextInputEditText etname;
+    @BindView(R.id.edtlink)
+    TextInputEditText etlink;
+    @BindView(R.id.edtdesig)
+    TextInputEditText etdesig;
+    @BindView(R.id.imageView)
     ImageView imageView;
     String userid,name,designation,image,username,userdisg,userlink,userimage;
     String se;
     ProgressDialog pDialog;
     HttpParse httpParse = new HttpParse();
-    String HttpURL = "https://ameygraphics.com/ayulr/ayulr_api/add_videos.php";
+    String HttpURL = "https://ameygraphics.com/ayulr/api/add_videos.php";
     String ParseResult;
     HashMap<String, String> ResultHash = new HashMap<>();
     String ImageHolder;
@@ -46,50 +56,21 @@ public class AddVideoActivity extends AppCompatActivity {
     String finalResult;
     HashMap<String, String> hashMap = new HashMap<>();
     Boolean CheckEditText;
+    @BindView(R.id.btnadd)
     Button button;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_video);
+        ButterKnife.bind(this);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        etname=(EditText) findViewById(R.id.edtname);
-        etdesig=(EditText) findViewById(R.id.edtdesig);
-        etlink=(EditText) findViewById(R.id.edtlink);
-        imageView=(ImageView)findViewById(R.id.imageView);
         ImageHolder="Noimage.jpeg";
         User user = SharedPrefManager.getInstance(this).getUser();
         userid = String.valueOf(user.getId());
-        button=(Button)findViewById(R.id.btnadd);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                GetDataFromEditText();
-                if (CheckEditText) {
-                    if (NetworkDetactor.isNetworkAvailable(AddVideoActivity.this)) {
-                        RecordUpdate(username,userdisg,userlink,ImageHolder,userid);
-
-                    } else {
-                        Toast.makeText(AddVideoActivity.this, "No Internet Available", Toast.LENGTH_SHORT).show();
-                    }
-
-                }
-            }
-        });
-        imageView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                switch (v.getId()) {
-                    case R.id.imageView:
-                        Intent galleryintent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-                        galleryintent.setType("image/*");
-                        startActivityForResult(galleryintent, Result_Load_Image);
-                        break;
-                }
-
-            }
-        });
+        button.setOnClickListener(this);
+        imageView.setOnClickListener(this);
     }
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -221,6 +202,27 @@ public class AddVideoActivity extends AppCompatActivity {
 
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onClick(View v) {
+        if (v==button){
+            GetDataFromEditText();
+            if (CheckEditText) {
+                if (NetworkDetactor.isNetworkAvailable(AddVideoActivity.this)) {
+                    RecordUpdate(username,userdisg,userlink,ImageHolder,userid);
+
+                } else {
+                    Toast.makeText(AddVideoActivity.this, "No Internet Available", Toast.LENGTH_SHORT).show();
+                }
+
+            }
+        }
+        if (v==imageView){
+            Intent galleryintent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+            galleryintent.setType("image/*");
+            startActivityForResult(galleryintent, Result_Load_Image);
+        }
     }
 }
 

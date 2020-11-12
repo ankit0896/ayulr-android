@@ -10,6 +10,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.oxygen.micro.ayulr.doctor.activity.ActivityLogin;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.HashMap;
@@ -42,7 +44,7 @@ public class ChangePasswordActivity extends AppCompatActivity {
                 if (NetworkDetactor.isNetworkAvailable(ChangePasswordActivity.this)) {
                 if (CheckEditText) {
                     RecordUpdate(phone, password);
-                    Intent intent = new Intent(ChangePasswordActivity.this,ActivityLogin.class);
+                    Intent intent = new Intent(ChangePasswordActivity.this, ActivityLogin.class);
                     startActivity(intent);
                 }
                 } else {

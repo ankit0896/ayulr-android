@@ -95,7 +95,7 @@ public class ViewMedicatedEquipmentActivity extends AppCompatActivity {
 
         @Override
         protected String doInBackground(Void... params) {
-            String server_url = Config.BASEURL+"donor/fetch_equi.php";
+            String server_url = Config.BASEURL+"fetch_equi.php";
 
             try {
                 URL url = new URL(server_url);

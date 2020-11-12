@@ -4,6 +4,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 
+import com.oxygen.micro.ayulr.commonactivity.CategoryActivity;
+
 public class SharedPrefManagernur {
     private static final String KEY_NURNAME = "keynurname";
     private static final String KEY_NUREmail = "keynuremail";

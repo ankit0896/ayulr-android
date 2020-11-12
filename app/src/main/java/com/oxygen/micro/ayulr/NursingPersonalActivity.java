@@ -47,7 +47,7 @@ public class NursingPersonalActivity extends AppCompatActivity {
     String finalResult;
     HashMap<String, String> hashMap = new HashMap<>();
     HttpParse httpParse = new HttpParse();
-    String HttpURL = "https://ameygraphics.com/ayulr/ayulr_api/nursing/personal.php";
+    String HttpURL = "https://ameygraphics.com/ayulr/api/nursing/personal.php";
     String ParseResult;
     HashMap<String, String> ResultHash = new HashMap<>();
     String se;
@@ -104,7 +104,6 @@ public class NursingPersonalActivity extends AppCompatActivity {
                     if (CheckEditText) {
 
                             DoctorRegistration(DrNameHolder,DobHolder,GenderHolder,EmailHolder,ContactHolder,AnniversaryHolder,ResidenceHolder,ImageHolder);
-
 
                     } else {
 
