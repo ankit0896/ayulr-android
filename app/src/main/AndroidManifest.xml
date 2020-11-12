@@ -27,6 +27,7 @@
         <activity
             android:name=".ActivityViewPager"
             android:screenOrientation="portrait" />
+
         <activity
             android:name=".Main2Activity"
             android:label="DASHBOARD"
